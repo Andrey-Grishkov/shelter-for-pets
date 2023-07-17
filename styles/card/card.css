@@ -1,0 +1,56 @@
+.card {
+  width: 270px;
+  height: 435px;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card:hover {
+  cursor: pointer;
+}
+.card:hover .card__button {
+  background: #FDDCC4;
+}
+.card__title {
+  margin: 30px 0 0 0;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.card__button {
+  margin-top: 30px;
+  width: 187px;
+  height: 52px;
+  border: 2px solid rgb(241, 205, 179);
+  border-radius: 100px;
+  background: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+  .card__button {
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+  }
+}
+.card__button:hover {
+  background: #FDDCC4;
+}
+@media screen and (max-width: 1040px) {
+  .card_not-visible768 {
+    display: none;
+  }
+}
+@media screen and (max-width: 610px) {
+  .card_not-visible320 {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=card.css.map */

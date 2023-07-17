@@ -1,0 +1,129 @@
+.pets-popup {
+  background-color: rgba(41, 41, 41, 0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: none;
+
+  &_opened {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__close {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    border: 2px rgba(241, 205, 179, 1) solid;
+    border-radius: 100%;
+    background: none;
+    left: 1080px;
+    top: 136px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+    }
+  }
+
+  &__close-image {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+  }
+
+  &__content {
+    width: 900px;
+    height: 500px;
+    background-color: rgba(250, 250, 250, 1);
+    color: #000000;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    gap: 30px;
+  }
+
+  &__image {
+    width: 500px;
+    height: 500px;
+  }
+
+  &__text-container {
+    width: 351px;
+    height: 362px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+  }
+
+  &__subtitle {
+    margin: 10px 0 0 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+  }
+
+  &__description {
+    margin: 40px 0 0 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+
+  &__list {
+    margin: 40px 0 0 0;
+    padding-left: 15px;
+    list-style-type: circle;
+    color: rgba(241, 205, 179, 1);
+    //list-style-type: disc;
+  }
+
+  &__list-item {
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+
+  &__list-text {
+    margin: 0 0 0 5px;
+    color: black;
+  }
+
+  &__list-span {
+    margin: 0;
+    color: black;
+    font-weight: 700;
+  }
+}

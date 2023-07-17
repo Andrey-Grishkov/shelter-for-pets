@@ -1,0 +1,208 @@
+.start-screen {
+  margin-top: 0;
+  width: 100%;
+  height: 908px;
+  background: url("../../images/start-screen.png"),
+  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 1180px) {
+    height: 1165px;
+  }
+
+  @media screen and (max-width: 768px) {
+    //height: 1165px;
+  }
+
+  @media screen and (max-width: 700px) {
+    height: 900px;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 823px;
+  }
+
+  &__content {
+    margin: 0 3.13vw 0 3.13vw;
+    width: 100vw;
+    padding: 0;
+    position: relative;
+
+    @media screen and (min-width: 1281px) {
+        max-width: 1280px;
+    }
+
+    @media screen and (max-width: 1180px) {
+      margin: 0 3.91vw 0 3.91vw;
+    }
+
+    @media screen and (max-width: 740px) {
+      width: 90vw;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      //padding: 0 15.91vw 0 15.91vw;
+    }
+
+    @media screen and (max-width: 320px) {
+      margin: 0 3.13vw 0 3.13vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin: 253px 0 0 0;
+    width: 310px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
+
+    @media screen and (max-width: 1180px) {
+      margin: 60px 16.15vw 0 16.15vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin: 60px 0 0 16.15vw;
+      width: 40.36vw;
+    }
+
+    @media screen and (max-width: 740px) {
+      font-size: 25px;
+      line-height: 130%;
+      width: 40.36vw;
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 60vw;
+    }
+
+    @media screen and (max-width: 320px) {
+      margin: 60px 0 0 0;
+      letter-spacing: 0.06em;
+      width: 250px;
+
+      font-size: 25px;
+      line-height: 130%;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    margin: 42px 0 0 0;
+    width: 460px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+
+    @media screen and (max-width: 1180px) {
+      margin: 42px 16.15vw 0 16.15vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 59.90vw;
+    }
+
+    @media screen and (max-width: 320px) {
+      margin: 42px 0 0 0;
+      width: 300px;
+      font-size: 15px;
+      line-height: 160%;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin: 42px 0 0 0;
+    width: 207px;
+    height: 52px;
+    background-color: #F1CDB3;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    border-radius: 100px;
+
+    @media screen and (max-width: 1180px) {
+      margin: 42px 32.55vw 0 32.55vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      //margin: 42px 32.55vw 0 32.55vw;
+    }
+
+    @media screen and (max-width: 740px) {
+      margin: 42px auto 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 320px) {
+      margin: 42px 0 0 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: .3;
+      transition: 1s ease-in;
+    }
+  }
+
+  &__image {
+    bottom: 0;
+    right: 0;
+    width: 54.53vw;
+    height: 56.88vw;
+    position: absolute;
+    background: url("../../images/start-screen__image.png") 0 0/contain no-repeat;
+
+    @media screen and (min-width: 1281px) {
+      width: 698px;
+      height: 728px;
+    }
+
+    @media screen and (max-width: 1180px) {
+      width: 569px;
+      height: 593px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 74.09vw;
+      height: 77.21vw;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 260px*2;
+      height: 271px*2;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 260px*1.4;
+      height: 271px*1.4;
+    }
+
+    @media screen and (max-width: 460px) {
+      width: 260px;
+      height: 271px;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 260px;
+      height: 271px;
+    }
+  }
+}

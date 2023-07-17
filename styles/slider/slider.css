@@ -1,0 +1,127 @@
+.slider {
+  margin-top: 60px;
+  width: 93.75vw;
+  height: 435px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 1281px) {
+  .slider {
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .slider {
+    width: 83.75vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .slider {
+    width: 708px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .slider {
+    width: 92.19vw;
+  }
+}
+@media screen and (max-width: 720px) {
+  .slider {
+    display: grid;
+    column-gap: 80px;
+    height: 507px;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 560px) {
+  .slider {
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 300px;
+    column-gap: 80px;
+    height: 507px;
+  }
+}
+.slider__button {
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  background: none;
+  border: 2px solid rgb(241, 205, 179);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.slider__button:hover {
+  background: #FDDCC4;
+}
+@media screen and (max-width: 720px) {
+  .slider__button_hide320 {
+    display: none;
+  }
+}
+.slider__button_visible320 {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .slider__button_visible320 {
+    display: block;
+    justify-self: end;
+  }
+}
+@media screen and (max-width: 720px) {
+  .slider__button {
+    margin-top: 20px;
+  }
+}
+.slider__cards-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  gap: 7.03vw;
+}
+@media screen and (min-width: 1281px) {
+  .slider__cards-container {
+    gap: 90px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .slider__cards-container {
+    gap: 2.03vw;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .slider__cards-container {
+    gap: 7.03vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .slider__cards-container {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .slider__cards-container {
+    gap: 5.21vw;
+  }
+}
+@media screen and (max-width: 760px) {
+  .slider__cards-container {
+    gap: 2.21vw;
+  }
+}
+@media screen and (max-width: 720px) {
+  .slider__cards-container {
+    grid-column: span 2;
+  }
+}
+
+/*# sourceMappingURL=slider.css.map */
