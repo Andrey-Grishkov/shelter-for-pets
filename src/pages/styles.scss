@@ -1,0 +1,36 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+
+@import url(../styles/header/header.css);
+@import url(../styles/start-screen/start-screen.css);
+@import url(../styles/about/about.css);
+@import url(../styles/pets/pets.css);
+@import url(../styles/slider/slider.css);
+@import url(../styles/card/card.css);
+@import url(../styles/help/help.css);
+@import url(../styles/donation/donation.css);
+@import url(../styles/footer/footer.css);
+@import url(../styles/burger-popup/burger-popup.css);
+@import url(../styles/pets-popup/pets-popup.css);
+@import url(../styles/all-pets/all-pets.css);
+
+.page {
+  //max-width: 100%;
+  margin: 0 auto;
+  font-family: 'Georgia', 'Arial', google fonts, sans-serif;
+  color: rgba(84, 84, 84, 1);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &_hidden {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
