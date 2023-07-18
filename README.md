@@ -1,4 +1,4 @@
-## Shelter-for-pets
+## Shelter-for-consts
 ___
 
 ### 🐶 Ссылка на проект:

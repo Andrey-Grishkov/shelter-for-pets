@@ -1,4 +1,4 @@
-import {pets} from "./pets.js"
+import { pets } from "./constans.ts"
 
 //_________________________ПОПАП БУРГЕР МЕНЮ__________________________________________
 const popupBurger = document.querySelector('.burger-popup');
@@ -39,8 +39,8 @@ burgerMenuNav.addEventListener('click', toggleBurgerMenu);
 //_________________________________________________________________________
 
 
-console.log(pets)
-console.log(pets[0].name)
+console.log(consts)
+console.log(consts[0].name)
 
 const cardTitle = document.querySelector('.pets-popup__title');
 const cardSubTitle = document.querySelector('.pets-popup__subtitle');
@@ -58,14 +58,14 @@ cards.forEach((card)=>{
 
   card.addEventListener('mousedown', (evt) => {
     const indexPets = card.getAttribute('id');
-    petsPopupImage.setAttribute("src", pets[indexPets].img)
-    cardTitle.innerText = pets[indexPets].name;
-    cardSubTitle.innerText = `${pets[indexPets].type} - ${pets[indexPets].breed}`;
-    cardDescription.innerText = pets[indexPets].description;
-    ageText.innerText = pets[indexPets].age;
-    inoculationsText.innerText = pets[indexPets].inoculations;
-    diseasesText.innerText = pets[indexPets].diseases;
-    parasitesText.innerText = pets[indexPets].parasites;
+    petsPopupImage.setAttribute("src", consts[indexPets].img)
+    cardTitle.innerText = consts[indexPets].name;
+    cardSubTitle.innerText = `${consts[indexPets].type} - ${consts[indexPets].breed}`;
+    cardDescription.innerText = consts[indexPets].description;
+    ageText.innerText = consts[indexPets].age;
+    inoculationsText.innerText = consts[indexPets].inoculations;
+    diseasesText.innerText = consts[indexPets].diseases;
+    parasitesText.innerText = consts[indexPets].parasites;
     openPopup(card)
   }
   )
