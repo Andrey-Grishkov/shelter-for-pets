@@ -46,11 +46,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/main.html'
+      filename: 'index.html',
+      template: './src/index.html'
     }),
-    // new HtmlWebpackPlugin({
-    //   template: './src/pets.html'
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'pets.html',
+      template: './src/pets.html'
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'index.css',
