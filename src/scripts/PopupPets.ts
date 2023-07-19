@@ -1,6 +1,7 @@
-import { Popup } from './popup';
+import { Popup } from './Popup';
+import { IPet } from '../utils/constans';
 
-export class PopupBurger extends Popup {
+export class PopupPets extends Popup {
     constructor(
         popupElement: HTMLElement | null,
         openButton: HTMLElement | null,
@@ -10,7 +11,8 @@ export class PopupBurger extends Popup {
         super(popupElement, openButton, popupOpenSelector, popupClosedSelector);
     }
 
-    open() {
+    openPetsPopup(item: IPet): void {
+        console.log(item);
         super.open();
     }
 

@@ -1,4 +1,16 @@
-const pets = [
+interface IPet {
+    name: string;
+    img: string;
+    type: string;
+    breed: string;
+    description: string;
+    age: string;
+    inoculations: string[];
+    diseases: string[];
+    parasites: string[];
+}
+
+const pets: IPet[] = [
     {
         name: 'Jennifer',
         img: '../../images/card__image%20pets-jennifer.png',
@@ -100,10 +112,10 @@ const pets = [
 const popupBurgerElement: HTMLElement | null = document.querySelector('.burger-popup');
 const burgerMenuElement: HTMLElement | null = document.querySelector('.header__burger-menu');
 const burgerMenuNavElement: HTMLElement | null = document.querySelector('.burger-popup__burger-menu');
-const pageElement: HTMLElement | null = document.querySelector('.page');
-const petsPopupElement: HTMLElement | null = document.querySelector('.pets-popup');
 const popupBurgerOpenedSelector = 'burger-popup_opened';
 const popupBurgerClosedSelector = 'burger-popup__burger-menu';
+const pageElement: HTMLElement | null = document.querySelector('.page');
+const petsPopupElement: HTMLElement | null = document.querySelector('.pets-popup');
 
 export {
     pets,
@@ -114,4 +126,5 @@ export {
     pageElement,
     popupBurgerOpenedSelector,
     popupBurgerClosedSelector,
+    IPet,
 };
