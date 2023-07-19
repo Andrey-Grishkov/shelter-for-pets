@@ -25,7 +25,7 @@ const pets: IPet[] = [
     },
     {
         name: 'Sophia',
-        img: '../../images/card__image%20sophia.png',
+        img: '../images/card__image%20sophia.png',
         type: 'Dog',
         breed: 'Shih tzu',
         description:
@@ -37,7 +37,7 @@ const pets: IPet[] = [
     },
     {
         name: 'Woody',
-        img: '../../images/card__image%20pets-woody.png',
+        img: '../images/card__image%20pets-woody.png',
         type: 'Dog',
         breed: 'Golden Retriever',
         description:
@@ -116,6 +116,16 @@ const popupBurgerOpenedSelector = 'burger-popup_opened';
 const popupBurgerClosedSelector = 'burger-popup__burger-menu';
 const pageElement: HTMLElement | null = document.querySelector('.page');
 const petsPopupElement: HTMLElement | null = document.querySelector('.pets-popup');
+const popupPetsOpenedSelector = 'pets-popup_opened';
+const popupPetsClosedSelector = 'pets-popup__close';
+const cardTitle: HTMLElement | null = document.querySelector('.pets-popup__title');
+const cardSubTitle: HTMLElement | null = document.querySelector('.pets-popup__subtitle');
+const cardDescription: HTMLElement | null = document.querySelector('.pets-popup__description');
+const ageText: HTMLElement | null = document.querySelector('.pets-popup-age-text');
+const inoculationsText: HTMLElement | null = document.querySelector('.pets-popup-inoculations-text');
+const diseasesText: HTMLElement | null = document.querySelector('.pets-popup-diseases-text');
+const parasitesText: HTMLElement | null = document.querySelector('.pets-popup-parasites-text');
+const petsPopupImage: HTMLImageElement | null = document.querySelector('.pets-popup__image');
 
 export {
     pets,
@@ -126,5 +136,15 @@ export {
     pageElement,
     popupBurgerOpenedSelector,
     popupBurgerClosedSelector,
+    popupPetsOpenedSelector,
+    popupPetsClosedSelector,
+    cardTitle,
+    cardSubTitle,
+    cardDescription,
+    ageText,
+    inoculationsText,
+    diseasesText,
+    parasitesText,
+    petsPopupImage,
     IPet,
 };

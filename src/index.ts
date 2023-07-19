@@ -8,6 +8,16 @@ import {
     pageElement,
     popupBurgerOpenedSelector,
     popupBurgerClosedSelector,
+    popupPetsOpenedSelector,
+    popupPetsClosedSelector,
+    cardTitle,
+    cardSubTitle,
+    cardDescription,
+    ageText,
+    inoculationsText,
+    diseasesText,
+    parasitesText,
+    petsPopupImage,
     IPet,
 } from './utils/constans';
 import { PopupBurger } from './scripts/PopupBurger';
@@ -23,19 +33,26 @@ const popupBurger = new PopupBurger(
 );
 popupBurger.setEventListeners();
 
-const popupPets = new PopupPets(
-    petsPopupElement,
-    burgerMenuElement,
-    popupBurgerOpenedSelector,
-    popupBurgerClosedSelector
-);
-popupBurger.setEventListeners();
-
 function createCard(item: IPet) {
     const card = new Card(item, {
         selector: '.template-cards',
         handleCardClick: () => {
+            const popupPets = new PopupPets(
+                petsPopupElement,
+                null,
+                popupPetsOpenedSelector,
+                popupPetsClosedSelector,
+                cardTitle,
+                cardSubTitle,
+                cardDescription,
+                ageText,
+                inoculationsText,
+                diseasesText,
+                parasitesText,
+                petsPopupImage
+            );
             popupPets.openPetsPopup(item);
+            popupPets.setEventListeners();
         },
     });
     const cardElement = card.generateCard();
