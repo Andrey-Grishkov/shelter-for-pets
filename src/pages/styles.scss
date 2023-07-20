@@ -1,18 +1,18 @@
-@import url(../vendor/normalize.css);
-@import url(../vendor/fonts.css);
+@import '../vendor/normalize.css';
+@import '../vendor/fonts.css';
 
-@import url(../styles/header/header.css);
-@import url(../styles/start-screen/start-screen.css);
-@import url(../styles/about/about.css);
-@import url(../styles/pets/pets.css);
-@import url(../styles/slider/slider.css);
-@import url(../styles/card/card.css);
-@import url(../styles/help/help.css);
-@import url(../styles/donation/donation.css);
-@import url(../styles/footer/footer.css);
-@import url(../styles/burger-popup/burger-popup.css);
-@import url(../styles/pets-popup/pets-popup.css);
-@import url(../styles/all-pets/all-pets.css);
+@import '../styles/header/header.scss';
+@import '../styles/start-screen/start-screen.scss';
+@import '../styles/about/about.scss';
+@import '../styles/pets/pets.scss';
+@import '../styles/slider/slider.scss';
+@import '../styles/card/card.scss';
+@import '../styles/help/help.scss';
+@import '../styles/donation/donation.scss';
+@import '../styles/footer/footer.scss';
+@import '../styles/burger-popup/burger-popup.scss';
+@import '../styles/pets-popup/pets-popup.scss';
+@import '../styles/all-pets/all-pets.scss';
 
 .page {
   //max-width: 100%;

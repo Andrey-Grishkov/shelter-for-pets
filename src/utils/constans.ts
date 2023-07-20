@@ -10,6 +10,9 @@ interface IPet {
     parasites: string[];
 }
 
+type RendererFunction = (item: IPet) => void;
+type handleCardClickFunction = () => void;
+
 const pets: IPet[] = [
     {
         name: 'Jennifer',
@@ -147,4 +150,6 @@ export {
     parasitesText,
     petsPopupImage,
     IPet,
+    RendererFunction,
+    handleCardClickFunction,
 };

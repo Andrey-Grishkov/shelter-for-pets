@@ -24,6 +24,7 @@ import { PopupBurger } from './scripts/PopupBurger';
 import { PopupPets } from './scripts/PopupPets';
 import { Section } from './scripts/Section';
 import { Card } from './scripts/Card';
+import { Slider } from './scripts/Slider';
 
 const popupBurger = new PopupBurger(
     popupBurgerElement,
@@ -68,7 +69,14 @@ const sectionCards = new Section(
             sectionCards.addItem(createCard(item));
         },
     },
-    '.slider__cards-container'
+    '.slider__cards-list'
 );
 
 sectionCards.renderCards(pets);
+
+const sliderList: HTMLElement | null = document.querySelector('.slider__cards-list');
+const sliderLeftButton: HTMLButtonElement | null = document.querySelector('.slider__button_left');
+const sliderRightButton: HTMLButtonElement | null = document.querySelector('.slider__button_right');
+
+const slider = new Slider(sliderList, sliderLeftButton, sliderRightButton);
+slider.setButtonsListeners();

@@ -1,5 +1,4 @@
-import { IPet } from '../utils/constans';
-type handleCardClickFunction = () => void;
+import { IPet, handleCardClickFunction } from '../utils/constans';
 
 export class Card {
     public _item: IPet;
@@ -24,15 +23,12 @@ export class Card {
     }
 
     _getItem() {
-        console.log(this._item, 'this._item Card');
         const cardsTemplateElement: HTMLTemplateElement | null = document.querySelector(this._selector);
         if (!cardsTemplateElement) throw new Error('cardItem is null');
         const cardsTemplateElementContent = cardsTemplateElement.content;
         const cardItem: HTMLElement | null = cardsTemplateElementContent.querySelector('.card');
         if (!cardItem) throw new Error('cardItem is null');
-        console.log(cardItem, 'cardItem Card');
         this._element = cardItem.cloneNode(true) as HTMLElement;
-        console.log(this._element, 'this._element');
     }
 
     generateCard() {

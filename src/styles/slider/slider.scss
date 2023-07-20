@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border: blue solid 1px;
 
   @media screen and (min-width: 1281px) {
     width: 1200px;
@@ -75,15 +76,28 @@
     }
   }
 
-  &__cards-container {
+  &__container {
+    width: 1000px;
+    height: 100%;
+    border: red solid 1px;
+    overflow: hidden;
+  }
+
+  &__cards-list {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
-    //justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     list-style-type: none;
     gap: 7.03vw;
+    position: relative;
+    left: -360px;
+
+    &_transition {
+      transition: all .5s ease;
+    }
 
     @media screen and (min-width: 1281px) {
       gap: 90px;
@@ -114,3 +128,5 @@
     }
   }
 }
+
+

@@ -38,7 +38,6 @@ export class PopupPets extends Popup {
     }
 
     openPetsPopup(item: IPet): void {
-        console.log(item);
         if (!this._cardTitle) throw new Error('this._cardTitle is null');
         this._cardTitle.innerText = item.name;
         if (!this._cardSubTitle) throw new Error('this._cardSubTitle is null');

@@ -1,5 +1,4 @@
-import { IPet } from '../utils/constans';
-type RendererFunction = (item: IPet) => void;
+import { IPet, RendererFunction } from '../utils/constans';
 
 export class Section {
     public _renderer: (item: IPet) => void;

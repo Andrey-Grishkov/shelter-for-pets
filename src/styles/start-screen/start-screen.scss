@@ -2,7 +2,7 @@
   margin-top: 0;
   width: 100%;
   height: 908px;
-  background: url("../../images/start-screen.png"),
+  background: url("../images/start-screen.png"),
   radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   display: flex;
   justify-content: center;
@@ -168,7 +168,7 @@
     width: 54.53vw;
     height: 56.88vw;
     position: absolute;
-    background: url("../../images/start-screen__image.png") 0 0/contain no-repeat;
+    background: url("../images/start-screen__image.png") 0 0/contain no-repeat;
 
     @media screen and (min-width: 1281px) {
       width: 698px;
