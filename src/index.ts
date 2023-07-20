@@ -29,7 +29,9 @@ const popupBurger = new PopupBurger(
     popupBurgerElement,
     burgerMenuElement,
     popupBurgerOpenedSelector,
-    popupBurgerClosedSelector
+    popupBurgerClosedSelector,
+    pageElement,
+    burgerMenuNavElement
 );
 popupBurger.setEventListeners();
 
@@ -49,7 +51,8 @@ function createCard(item: IPet) {
                 inoculationsText,
                 diseasesText,
                 parasitesText,
-                petsPopupImage
+                petsPopupImage,
+                pageElement
             );
             popupPets.openPetsPopup(item);
             popupPets.setEventListeners();

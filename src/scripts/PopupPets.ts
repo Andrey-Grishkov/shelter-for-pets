@@ -23,9 +23,10 @@ export class PopupPets extends Popup {
         inoculationsText: HTMLElement | null,
         diseasesText: HTMLElement | null,
         parasitesText: HTMLElement | null,
-        petsPopupImage: HTMLImageElement | null = null
+        petsPopupImage: HTMLImageElement | null = null,
+        pageElement: HTMLElement | null
     ) {
-        super(popupElement, openButton, popupOpenSelector, popupClosedSelector);
+        super(popupElement, openButton, popupOpenSelector, popupClosedSelector, pageElement);
         this._cardTitle = cardTitle;
         this._cardSubTitle = cardSubTitle;
         this._cardDescription = cardDescription;
