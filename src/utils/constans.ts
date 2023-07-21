@@ -129,6 +129,9 @@ const inoculationsText: HTMLElement | null = document.querySelector('.pets-popup
 const diseasesText: HTMLElement | null = document.querySelector('.pets-popup-diseases-text');
 const parasitesText: HTMLElement | null = document.querySelector('.pets-popup-parasites-text');
 const petsPopupImage: HTMLImageElement | null = document.querySelector('.pets-popup__image');
+const sliderList: HTMLElement | null = document.querySelector('.slider__cards-list');
+const sliderLeftButton: HTMLButtonElement | null = document.querySelector('.slider__button_left');
+const sliderRightButton: HTMLButtonElement | null = document.querySelector('.slider__button_right');
 
 export {
     pets,
@@ -152,4 +155,7 @@ export {
     IPet,
     RendererFunction,
     handleCardClickFunction,
+    sliderList,
+    sliderLeftButton,
+    sliderRightButton,
 };

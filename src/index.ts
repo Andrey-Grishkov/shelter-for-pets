@@ -18,6 +18,9 @@ import {
     diseasesText,
     parasitesText,
     petsPopupImage,
+    sliderList,
+    sliderLeftButton,
+    sliderRightButton,
     IPet,
 } from './utils/constans';
 import { PopupBurger } from './scripts/PopupBurger';
@@ -73,10 +76,6 @@ const sectionCards = new Section(
 );
 
 sectionCards.renderCards(pets);
-
-const sliderList: HTMLElement | null = document.querySelector('.slider__cards-list');
-const sliderLeftButton: HTMLButtonElement | null = document.querySelector('.slider__button_left');
-const sliderRightButton: HTMLButtonElement | null = document.querySelector('.slider__button_right');
 
 const slider = new Slider(sliderList, sliderLeftButton, sliderRightButton);
 slider.setButtonsListeners();
