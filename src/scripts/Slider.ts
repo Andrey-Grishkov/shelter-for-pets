@@ -15,7 +15,7 @@ export class Slider {
         this.offSet = -360;
     }
 
-    infiniteSliderReplacer = (direction: string) => {
+    infiniteSliderReplacer = (direction: string, gapValue: number) => {
         if (!this._sliderList) throw new Error('this._sliderList is null');
         this._sliderList.classList.add('slider__cards-list_transition');
         this._sliderList.style.left = this.offSet + 'px';
@@ -33,7 +33,7 @@ export class Slider {
                 this._sliderList.classList.remove('slider__cards-list_transition');
                 this._sliderList.append(currentElement);
             }
-            this.offSet = -360;
+            this.offSet = -(270 + gapValue);
             this._sliderList.style.left = this.offSet + 'px';
             if (!this._sliderLeftButton) throw new Error('this._sliderLeftButton is null');
             if (!this._sliderRightButton) throw new Error('this._sliderLeftButton is null');
@@ -50,7 +50,7 @@ export class Slider {
         if (!this._sliderList) throw new Error('this._sliderList is null');
         const gapValue = parseFloat(window.getComputedStyle(this._sliderList).gap);
         this.offSet = this.offSet + 270 + gapValue;
-        this.infiniteSliderReplacer('left');
+        this.infiniteSliderReplacer('left', gapValue);
     };
 
     rightScroll = () => {
@@ -60,7 +60,7 @@ export class Slider {
         if (!this._sliderList) throw new Error('this._sliderList is null');
         const gapValue = parseFloat(window.getComputedStyle(this._sliderList).gap);
         this.offSet = this.offSet - 270 - gapValue;
-        this.infiniteSliderReplacer('right');
+        this.infiniteSliderReplacer('right', gapValue);
     };
 
     setButtonsListeners() {

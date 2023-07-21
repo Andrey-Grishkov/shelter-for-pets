@@ -1,3 +1,11 @@
+$cardGap1280: 7.03vw;
+$cardGap1180: 2.03vw;
+$cardGap1040: 7.03vw;
+$cardGap900: 4.44vw;
+$cardGap768: 5.21vw;
+$cardGap760: 2.21vw;
+$cardWidth: 270px;
+
 .slider {
   margin-top: 60px;
   width: 93.75vw;
@@ -77,10 +85,33 @@
   }
 
   &__container {
-    width: 1000px;
-    height: 100%;
+    width: calc(#{$cardGap1280}*2 + #{$cardWidth}*3);
     border: red solid 1px;
     overflow: hidden;
+
+    @media screen and (min-width: 1281px) {
+      width: 990px;
+    }
+
+    @media screen and (max-width: 1180px) {
+      width: calc(#{$cardGap1180}*2 + #{$cardWidth}*3);
+    }
+
+    @media screen and (max-width: 1040px) {
+      width: calc(#{$cardGap1040} + #{$cardWidth}*2);
+    }
+
+    @media screen and (max-width: 900px) {
+      width: calc(#{$cardGap900} + #{$cardWidth}*2);
+    }
+
+    @media screen and (max-width: 768px) {
+      width: calc(#{$cardGap768} + #{$cardWidth}*2);
+    }
+
+    @media screen and (max-width: 760px) {
+      width: $cardWidth;
+    }
   }
 
   &__cards-list {
@@ -91,36 +122,42 @@
     justify-content: flex-start;
     align-items: center;
     list-style-type: none;
-    gap: 7.03vw;
+    gap: $cardGap1280;
     position: relative;
-    left: -360px;
+    left: calc(#{-$cardWidth} - #{$cardGap1280});
 
     &_transition {
       transition: all .5s ease;
     }
 
     @media screen and (min-width: 1281px) {
+      left: -360px;
       gap: 90px;
     }
 
     @media screen and (max-width: 1180px) {
-      gap: 2.03vw;
+      gap: $cardGap1180;
+      left: calc(#{-$cardWidth} - #{$cardGap1180});
     }
 
     @media screen and (max-width: 1040px) {
-      gap: 7.03vw;
+      gap: $cardGap1040;
+      left: calc(#{-$cardWidth} - #{$cardGap1040});
     }
 
     @media screen and (max-width: 900px) {
-      gap: 40px;
+      left: calc(#{-$cardWidth} - #{$cardGap900});
+      gap: $cardGap900;
     }
 
     @media screen and (max-width: 768px) {
-      gap: 5.21vw;
+      gap: $cardGap768;
+      left: calc(#{-$cardWidth} - #{$cardGap768});
     }
 
     @media screen and (max-width: 760px) {
-      gap: 2.21vw;
+      gap: $cardGap760;
+      left: calc(#{-$cardWidth} - #{$cardGap760});
     }
 
     @media screen and (max-width: 720px) {
