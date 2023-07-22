@@ -14,7 +14,6 @@ $cardWidth: 270px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: blue solid 1px;
 
   @media screen and (min-width: 1281px) {
     width: 1200px;
@@ -34,6 +33,7 @@ $cardWidth: 270px;
 
   @media screen and (max-width: 720px) {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     column-gap: 80px;
     height: 507px;
     justify-content: center;
@@ -64,29 +64,22 @@ $cardWidth: 270px;
       background: #FDDCC4;
     }
 
-    &_hide320 {
+    &_left {
       @media screen and (max-width: 720px) {
-        display: none;
-      }
-    }
-
-    &_visible320 {
-      display: none;
-
-      @media screen and (max-width: 720px) {
-        display: block;
+        order: 2;
         justify-self: end;
       }
     }
 
-    @media screen and (max-width: 720px) {
-      margin-top: 20px;
+    &_right {
+      @media screen and (max-width: 720px) {
+        order: 3;
+      }
     }
   }
 
   &__container {
     width: calc(#{$cardGap1280}*2 + #{$cardWidth}*3);
-    border: red solid 1px;
     overflow: hidden;
 
     @media screen and (min-width: 1281px) {
@@ -111,6 +104,11 @@ $cardWidth: 270px;
 
     @media screen and (max-width: 760px) {
       width: $cardWidth;
+    }
+
+    @media screen and (max-width: 720px) {
+      grid-column: span 2;
+      justify-self: center;
     }
   }
 
@@ -158,10 +156,6 @@ $cardWidth: 270px;
     @media screen and (max-width: 760px) {
       gap: $cardGap760;
       left: calc(#{-$cardWidth} - #{$cardGap760});
-    }
-
-    @media screen and (max-width: 720px) {
-      grid-column: span 2;
     }
   }
 }
