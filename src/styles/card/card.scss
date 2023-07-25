@@ -25,6 +25,12 @@
     color: #545454;
   }
 
+  &__image {
+    width: 270px;
+    height: 270px;
+    object-fit: contain;
+  }
+
   &__button {
     margin-top: 30px;
     width: 187px;

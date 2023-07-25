@@ -64,8 +64,9 @@ export class Slider {
     };
 
     setButtonsListeners() {
-        this._sliderLeftButton?.addEventListener('click', this.leftScroll);
-        this._sliderRightButton?.addEventListener('click', this.rightScroll);
-        if (!this._sliderList) throw new Error('this._sliderList is null');
+        if (this._sliderList) {
+            this._sliderLeftButton?.addEventListener('click', this.leftScroll);
+            this._sliderRightButton?.addEventListener('click', this.rightScroll);
+        }
     }
 }

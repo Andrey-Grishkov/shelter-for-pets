@@ -22,12 +22,22 @@ import {
     sliderLeftButton,
     sliderRightButton,
     IPet,
+    allPetsButtonTotalLeft,
+    allPetsButtonLeft,
+    allPetsCount,
+    allPetsButtonTotalRight,
+    allPetsButtonRight,
+    sliderListSelector,
+    allPetsListSelector,
+    templateCardsSelector,
+    petsList,
 } from './utils/constans';
 import { PopupBurger } from './scripts/PopupBurger';
 import { PopupPets } from './scripts/PopupPets';
 import { Section } from './scripts/Section';
 import { Card } from './scripts/Card';
 import { Slider } from './scripts/Slider';
+import { PetsPaginator } from './scripts/PetsPaginator';
 
 const popupBurger = new PopupBurger(
     popupBurgerElement,
@@ -41,7 +51,7 @@ popupBurger.setEventListeners();
 
 function createCard(item: IPet) {
     const card = new Card(item, {
-        selector: '.template-cards',
+        selector: templateCardsSelector,
         handleCardClick: () => {
             const popupPets = new PopupPets(
                 petsPopupElement,
@@ -72,10 +82,41 @@ const sectionCards = new Section(
             sectionCards.addItem(createCard(item));
         },
     },
-    '.slider__cards-list'
+    sliderListSelector
 );
 
 sectionCards.renderCards(pets);
 
 const slider = new Slider(sliderList, sliderLeftButton, sliderRightButton);
 slider.setButtonsListeners();
+
+const sectionCardsPets = new Section(
+    {
+        renderer: (item: IPet): void => {
+            sectionCardsPets.addItem(createCard(item));
+        },
+    },
+    allPetsListSelector
+);
+
+sectionCardsPets.renderCards(pets);
+
+const paginator = new PetsPaginator(
+    {
+        petsRender: (count: number): void => {
+            if (!allPetsCount) throw new Error('allPetsCount is null');
+            if (!petsList) throw new Error('petsList is null');
+            allPetsCount.textContent = count.toString();
+            petsList.textContent = '';
+            sectionCardsPets.renderCards(pets.slice(0, pets.length - count));
+            console.log(pets.slice(0, pets.length - count));
+        },
+    },
+    allPetsButtonTotalLeft,
+    allPetsButtonLeft,
+    allPetsCount,
+    allPetsButtonTotalRight,
+    allPetsButtonRight
+);
+
+paginator.setButtonsListeners();

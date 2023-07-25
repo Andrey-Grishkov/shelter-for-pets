@@ -29,53 +29,53 @@
     <section class="all-pets">
       <h3 class="all-pets__title">Our friends who <br> are looking for a house</h3>
       <ul class="all-pets__list">
-        <li class="card" id="4">
-          <img class="card__image" src="./images/card__image%20pets-katrine.png" alt="cat katrine">
-          <h4 class="card__title">Katrine</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card" id="0">
-          <img class="card__image" src="./images/card__image%20pets-jennifer.png" alt="puppy jennifer">
-          <h4 class="card__title">Jennifer</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card" id="2">
-          <img class="card__image" src="./images/card__image%20pets-woody.png" alt="dog woody">
-          <h4 class="card__title">Woody</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card card_not-visible320" id="1">
-          <img class="card__image" src="./images/card__image%20sophia.png" alt="puppy sophia">
-          <h4 class="card__title">Sophia</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card card_not-visible320" id="5">
-          <img class="card__image" src="./images/card__image%20pets-timmy.png" alt="cat timmy">
-          <h4 class="card__title">Timmy</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card card_not-visible320" id="7">
-          <img class="card__image" src="./images/card__image%20pets-charly.png" alt="dog charly">
-          <h4 class="card__title">Charly</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card card_not-visible768" id="3">
-          <img class="card__image" src="./images/card__image%20pets-scarlet.png" alt="puppy scarlet">
-          <h4 class="card__title">Scarlett</h4>
-          <button class="card__button">Learn more</button>
-        </li>
-        <li class="card card_not-visible768" id="6">
-          <img class="card__image" src="./images/card__image%20freddie.png" alt="cat freddie">
-          <h4 class="card__title">Freddie</h4>
-          <button class="card__button">Learn more</button>
-        </li>
+<!--        <li class="card" id="4">-->
+<!--          <img class="card__image" src="./images/card__image%20pets-katrine.png" alt="cat katrine">-->
+<!--          <h4 class="card__title">Katrine</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card" id="0">-->
+<!--          <img class="card__image" src="./images/card__image%20pets-jennifer.png" alt="puppy jennifer">-->
+<!--          <h4 class="card__title">Jennifer</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card" id="2">-->
+<!--          <img class="card__image" src="./images/card__image%20pets-woody.png" alt="dog woody">-->
+<!--          <h4 class="card__title">Woody</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card card_not-visible320" id="1">-->
+<!--          <img class="card__image" src="./images/card__image%20sophia.png" alt="puppy sophia">-->
+<!--          <h4 class="card__title">Sophia</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card card_not-visible320" id="5">-->
+<!--          <img class="card__image" src="./images/card__image%20pets-timmy.png" alt="cat timmy">-->
+<!--          <h4 class="card__title">Timmy</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card card_not-visible320" id="7">-->
+<!--          <img class="card__image" src="./images/card__image%20pets-charly.png" alt="dog charly">-->
+<!--          <h4 class="card__title">Charly</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card card_not-visible768" id="3">-->
+<!--          <img class="card__image" src="./images/card__image%20pets-scarlet.png" alt="puppy scarlet">-->
+<!--          <h4 class="card__title">Scarlett</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
+<!--        <li class="card card_not-visible768" id="6">-->
+<!--          <img class="card__image" src="./images/card__image%20freddie.png" alt="cat freddie">-->
+<!--          <h4 class="card__title">Freddie</h4>-->
+<!--          <button class="card__button">Learn more</button>-->
+<!--        </li>-->
       </ul>
       <div class="all-pets__button-container">
-        <button class="all-pets__button all-pets__button_disabled">&lt;&lt;</button>
-        <button class="all-pets__button all-pets__button_disabled">&lt;</button>
-        <button class="all-pets__button all-pets__button_numbered">1</button>
-        <button class="all-pets__button">&gt;</button>
-        <button class="all-pets__button">&gt;&gt;</button>
+        <button class="all-pets__button all-pets__button_total-left all-pets__button_disabled">&lt;&lt;</button>
+        <button class="all-pets__button all-pets__button_left all-pets__button_disabled">&lt;</button>
+        <div class="all-pets__button all-pets__button_count">1</div>
+        <button class="all-pets__button all-pets__button_right">&gt;</button>
+        <button class="all-pets__button all-pets__button_total-right">&gt;&gt;</button>
       </div>
     </section>
     <footer class="footer" id="contacts">
@@ -162,6 +162,46 @@
     </div>
 
   </div>
-  <script src="./scripts/script.js" type="module"></script>
+
+  <div class="pets-popup">
+    <button class="pets-popup__close">
+      <img class="pets-popup__close-image" src="./images/pets-popup__close.svg" alt="close">
+    </button>
+    <div class="pets-popup__content">
+      <img class="pets-popup__image">
+      <div class="pets-popup__text-container">
+        <h3 class="pets-popup__title"></h3>
+        <p class="pets-popup__subtitle"></p>
+        <p class="pets-popup__description"></p>
+        <ul class="pets-popup__list">
+          <li class="pets-popup__list-item">
+            <span class="pets-popup__list-span pets-popup-age">Age:</span>
+            <p class="pets-popup__list-text pets-popup-age-text"></p>
+          </li>
+          <li class="pets-popup__list-item">
+            <span class="pets-popup__list-span">Inoculations:</span>
+            <p class="pets-popup__list-text pets-popup-inoculations-text"></p>
+          </li>
+          <li class="pets-popup__list-item">
+            <span class="pets-popup__list-span">Diseases:</span>
+            <p class="pets-popup__list-text pets-popup-diseases-text"></p>
+          </li>
+          <li class="pets-popup__list-item">
+            <span class="pets-popup__list-span">Parasites:</span>
+            <p class="pets-popup__list-text pets-popup-parasites-text"></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <template class="template-cards">
+    <li class="card">
+      <img class="card__image">
+      <h4 class="card__title"></h4>
+      <button class="card__button">Learn more</button>
+    </li>
+  </template>
 </body>
 </html>

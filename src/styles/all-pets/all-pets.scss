@@ -131,14 +131,18 @@
 
       &:hover {
         background: none;
-        cursor: none;
+        cursor: default;
       }
     }
 
-    &_numbered {
+    &_count {
       background: #F1CDB3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       &:hover {
-        cursor: none;
+        cursor: default;
       }
     }
   }

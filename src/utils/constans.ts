@@ -110,6 +110,191 @@ const pets: IPet[] = [
         diseases: ['deafness', 'blindness'],
         parasites: ['lice', 'fleas'],
     },
+    {
+        name: 'Warren',
+        img: '../../images/card__image%20pets-warren.png',
+        type: 'Dog',
+        breed: 'Jack Russell Terrier',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '8 years',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Bobby',
+        img: '../../images/card__image%20pets-bobby.png',
+        type: 'Dog',
+        breed: 'Shar Pei',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '13 weeks old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Luna',
+        img: '../../images/card__image%20pets-luna.png',
+        type: 'Dog',
+        breed: 'Mini American Shepherd',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '13 weeks old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Paul',
+        img: '../../images/card__image%20pets-paul.png',
+        type: 'Dog',
+        breed: 'Blue-and-tan German Shepherd',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '10 weeks old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Eskey',
+        img: '../../images/card__image%20pets-eskey.png',
+        type: 'Dog',
+        breed: 'Belgian Shepherd',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '4 years old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Inca',
+        img: '../../images/card__image%20inca.png',
+        type: 'Dog',
+        breed: 'Black Belgian Shepherd',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '7 years old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Mary',
+        img: '../../images/card__image%20mary.png',
+        type: 'Dog',
+        breed: 'Rough Collie',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '7 years old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Marco',
+        img: '../../images/card__image%20marco.png',
+        type: 'Dog',
+        breed: 'Blue Italian Greyhound',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Marcel',
+        img: '../../images/card__image%20marcel.png',
+        type: 'Dog',
+        breed: 'Blue British Shorthair',
+        description:
+            'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Mysia',
+        img: '../../images/card__image%20mysia.png',
+        type: 'Dog',
+        breed: 'Russian Blue',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Holly',
+        img: '../../images/card__image%20holly.png',
+        type: 'Dog',
+        breed: 'Silver Egyptian Mau',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Cosmos',
+        img: '../../images/card__image%20cosmos.png',
+        type: 'Dog',
+        breed: 'Silver tabby chinchilla Persian',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Chloe',
+        img: '../../images/card__image%20chloe.png',
+        type: 'Dog',
+        breed: 'Chocolate Persian',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Cookie',
+        img: '../../images/card__image%20cookie.png',
+        type: 'Dog',
+        breed: 'Chocolate-tortoiseshell-and-white',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Tom',
+        img: '../../images/card__image%20tom.png',
+        type: 'Dog',
+        breed: 'Chocolate-tortoiseshell-and-white',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
+    {
+        name: 'Chubby',
+        img: '../../images/card__image%20chubby.png',
+        type: 'Dog',
+        breed: 'black-and-white',
+        description: 'female cat with green eyes.',
+        age: '4 months old',
+        inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+        diseases: ['deafness', 'blindness'],
+        parasites: ['lice', 'fleas'],
+    },
 ];
 
 const popupBurgerElement: HTMLElement | null = document.querySelector('.burger-popup');
@@ -132,6 +317,15 @@ const petsPopupImage: HTMLImageElement | null = document.querySelector('.pets-po
 const sliderList: HTMLElement | null = document.querySelector('.slider__cards-list');
 const sliderLeftButton: HTMLButtonElement | null = document.querySelector('.slider__button_left');
 const sliderRightButton: HTMLButtonElement | null = document.querySelector('.slider__button_right');
+const allPetsButtonTotalLeft: HTMLButtonElement | null = document.querySelector('.all-pets__button_total-left');
+const allPetsButtonLeft: HTMLButtonElement | null = document.querySelector('.all-pets__button_left');
+const allPetsCount: HTMLElement | null = document.querySelector('.all-pets__button_count');
+const allPetsButtonTotalRight: HTMLButtonElement | null = document.querySelector('.all-pets__button_total-right');
+const allPetsButtonRight: HTMLButtonElement | null = document.querySelector('.all-pets__button_right');
+const sliderListSelector = '.slider__cards-list';
+const allPetsListSelector = '.all-pets__list';
+const templateCardsSelector = '.template-cards';
+const petsList: HTMLElement | null = document.querySelector('.all-pets__list');
 
 export {
     pets,
@@ -158,4 +352,13 @@ export {
     sliderList,
     sliderLeftButton,
     sliderRightButton,
+    allPetsButtonTotalLeft,
+    allPetsButtonLeft,
+    allPetsCount,
+    allPetsButtonTotalRight,
+    allPetsButtonRight,
+    sliderListSelector,
+    allPetsListSelector,
+    templateCardsSelector,
+    petsList,
 };
