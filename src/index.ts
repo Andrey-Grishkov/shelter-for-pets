@@ -99,7 +99,7 @@ const sectionCardsPets = new Section(
     allPetsListSelector
 );
 
-sectionCardsPets.renderCards(pets);
+sectionCardsPets.renderCards(pets.slice(0, 6));
 
 const paginator = new PetsPaginator(
     {
@@ -108,8 +108,7 @@ const paginator = new PetsPaginator(
             if (!petsList) throw new Error('petsList is null');
             allPetsCount.textContent = count.toString();
             petsList.textContent = '';
-            sectionCardsPets.renderCards(pets.slice(0, pets.length - count));
-            console.log(pets.slice(0, pets.length - count));
+            sectionCardsPets.renderCards(pets.slice(6 * (count - 1), 6 * (count - 1) + 6));
         },
     },
     allPetsButtonTotalLeft,

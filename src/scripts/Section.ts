@@ -14,12 +14,12 @@ export class Section {
 
     renderCards(items: IPet[]) {
         this._items = items;
-        this._items.reverse().forEach((item) => {
+        this._items.forEach((item) => {
             this._renderer(item);
         });
     }
 
     addItem(item: Node) {
-        this._section?.prepend(item);
+        this._section?.append(item);
     }
 }
