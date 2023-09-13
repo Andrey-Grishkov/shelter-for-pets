@@ -321,6 +321,19 @@ const allPetsListSelector = '.all-pets__list';
 const templateCardsSelector = '.template-cards';
 const petsList: HTMLElement | null = document.querySelector('.all-pets__list');
 
+const root: HTMLElement | null = document.querySelector(':root');
+if (!root) throw new Error('root is null');
+const rootStyles = getComputedStyle(root);
+let quantityCardsOnPage = Number(rootStyles.getPropertyValue('--quantityCardsOnPage'));
+window.addEventListener('resize', quantityCardsFunction);
+
+function quantityCardsFunction() {
+    quantityCardsOnPage = Number(rootStyles.getPropertyValue('--quantityCardsOnPage'));
+    return quantityCardsOnPage;
+}
+
+console.log(quantityCardsOnPage, 'after func');
+
 export {
     pets,
     popupBurgerElement,
@@ -355,4 +368,5 @@ export {
     allPetsListSelector,
     templateCardsSelector,
     petsList,
+    quantityCardsOnPage,
 };

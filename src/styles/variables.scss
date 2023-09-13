@@ -1,0 +1,13 @@
+
+:root {
+  --quantityCardsOnPage: 6;
+
+  @media screen and (max-width: 880px) {
+    --quantityCardsOnPage: 4;
+  }
+
+  @media screen and (max-width: 630px) {
+    --quantityCardsOnPage: 1;
+  }
+}
+

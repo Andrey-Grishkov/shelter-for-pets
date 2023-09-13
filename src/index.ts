@@ -31,6 +31,7 @@ import {
     allPetsListSelector,
     templateCardsSelector,
     petsList,
+    quantityCardsOnPage,
 } from './utils/constans';
 import { PopupBurger } from './scripts/PopupBurger';
 import { PopupPets } from './scripts/PopupPets';
@@ -99,23 +100,22 @@ const sectionCardsPets = new Section(
     allPetsListSelector
 );
 
-sectionCardsPets.renderCards(pets.slice(0, 6));
+sectionCardsPets.renderCards(pets.slice(0, quantityCardsOnPage));
 
 const paginator = new PetsPaginator(
     {
-        petsRender: (count: number): void => {
-            if (!allPetsCount) throw new Error('allPetsCount is null');
+        petsRender: (petsPageMass: IPet[]): void => {
             if (!petsList) throw new Error('petsList is null');
-            allPetsCount.textContent = count.toString();
             petsList.textContent = '';
-            sectionCardsPets.renderCards(pets.slice(6 * (count - 1), 6 * (count - 1) + 6));
+            sectionCardsPets.renderCards(petsPageMass);
         },
     },
     allPetsButtonTotalLeft,
     allPetsButtonLeft,
     allPetsCount,
     allPetsButtonTotalRight,
-    allPetsButtonRight
+    allPetsButtonRight,
+    pets
 );
 
 paginator.setButtonsListeners();
