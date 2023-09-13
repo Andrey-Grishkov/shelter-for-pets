@@ -1,15 +1,13 @@
-import { IPet, quantityCardsOnPage } from '../utils/constans';
-
-type petsRenderFunction = (petsPageMass: IPet[]) => void;
+import { IPet, quantityCardsOnPage, petsRenderFunction } from '../utils/constans';
 
 export class PetsPaginator {
-    public _allPetsButtonTotalLeft: HTMLButtonElement | null;
-    public _allPetsButtonLeft: HTMLButtonElement | null;
-    public _allPetsCount: HTMLElement | null;
-    public _allPetsButtonTotalRight: HTMLButtonElement | null;
-    public _allPetsButtonRight: HTMLButtonElement | null;
-    public _petsRender: petsRenderFunction;
-    public count: number;
+    protected _allPetsButtonTotalLeft: HTMLButtonElement | null;
+    protected _allPetsButtonLeft: HTMLButtonElement | null;
+    protected _allPetsCount: HTMLElement | null;
+    protected _allPetsButtonTotalRight: HTMLButtonElement | null;
+    protected _allPetsButtonRight: HTMLButtonElement | null;
+    protected _petsRender: petsRenderFunction;
+    protected count: number;
     public quantityCardsOnPage: number;
     public pets: IPet[];
 
@@ -33,27 +31,51 @@ export class PetsPaginator {
         this.quantityCardsOnPage = 6;
     }
 
-    totalLeftScroll = () => {
+    private _totalLeftScroll = () => {
         this.count = 1;
-        this.handleRender(this.count);
+        this.handleRender();
     };
 
-    totalRightScroll = () => {
+    private _totalRightScroll = () => {
         this.count = this.pets.length / quantityCardsOnPage;
-        this.handleRender(this.count);
+        this.handleRender();
     };
 
-    leftScroll = () => {
+    private _leftScroll = () => {
         this.count--;
-        this.handleRender(this.count);
+        this.handleRender();
     };
 
-    rightScroll = () => {
+    private _rightScroll = () => {
         this.count++;
-        this.handleRender(this.count);
+        this.handleRender();
     };
 
-    setRightButtonsState(state: boolean) {
+    public handleRender = () => {
+        if (!this._allPetsCount) throw new Error('allPetsCount is null');
+        this._allPetsCount.textContent = this.count.toString();
+        const petsPageMass = this.pets.slice(
+            quantityCardsOnPage * (this.count - 1),
+            quantityCardsOnPage * (this.count - 1) + quantityCardsOnPage
+        );
+        this._setButtonsState();
+        this._petsRender(petsPageMass);
+    };
+
+    private _setButtonsState = () => {
+        if (this.count === this.pets.length / quantityCardsOnPage) {
+            this._setRightButtonsState(true);
+            this._setLeftButtonsState(false);
+        } else if (this.count > 1) {
+            this._setLeftButtonsState(false);
+            this._setRightButtonsState(false);
+        } else {
+            this._setLeftButtonsState(true);
+            this._setRightButtonsState(false);
+        }
+    };
+
+    private _setRightButtonsState = (state: boolean) => {
         if (!this._allPetsButtonTotalRight) throw new Error('this._allPetsButtonTotalRight is null');
         if (!this._allPetsButtonRight) throw new Error('_allPetsButtonRight is null');
         if (state) {
@@ -67,9 +89,9 @@ export class PetsPaginator {
             this._allPetsButtonRight.classList.remove('all-pets__button_disabled');
             this._allPetsButtonRight.disabled = false;
         }
-    }
+    };
 
-    setLeftButtonsState(state: boolean) {
+    private _setLeftButtonsState = (state: boolean) => {
         if (!this._allPetsButtonTotalLeft) throw new Error('this._allPetsButtonTotalLeft is null');
         if (!this._allPetsButtonLeft) throw new Error('_allPetsButtonLeft is null');
         if (state) {
@@ -83,45 +105,20 @@ export class PetsPaginator {
             this._allPetsButtonLeft.classList.remove('all-pets__button_disabled');
             this._allPetsButtonLeft.disabled = false;
         }
-    }
-
-    setButtonsState() {
-        if (this.count === this.pets.length / quantityCardsOnPage) {
-            this.setRightButtonsState(true);
-            this.setLeftButtonsState(false);
-        } else if (this.count > 1) {
-            this.setLeftButtonsState(false);
-            this.setRightButtonsState(false);
-        } else {
-            this.setLeftButtonsState(true);
-            this.setRightButtonsState(false);
-        }
-    }
-
-    handleRender = (count: number) => {
-        console.log(count, 'count');
-        if (!this._allPetsCount) throw new Error('allPetsCount is null');
-        this._allPetsCount.textContent = this.count.toString();
-        const petsPageMass = this.pets.slice(
-            quantityCardsOnPage * (this.count - 1),
-            quantityCardsOnPage * (this.count - 1) + quantityCardsOnPage
-        );
-        this.setButtonsState();
-        this._petsRender(petsPageMass);
     };
 
-    resizeRender = () => {
+    private _resizeRender = () => {
         if (this.count > this.pets.length / quantityCardsOnPage) {
             this.count = this.pets.length / quantityCardsOnPage;
         }
-        this.handleRender(this.count);
+        this.handleRender();
     };
 
-    setButtonsListeners() {
-        this._allPetsButtonTotalLeft?.addEventListener('click', this.totalLeftScroll);
-        this._allPetsButtonLeft?.addEventListener('click', this.leftScroll);
-        this._allPetsButtonTotalRight?.addEventListener('click', this.totalRightScroll);
-        this._allPetsButtonRight?.addEventListener('click', this.rightScroll);
-        window.addEventListener('resize', this.resizeRender);
-    }
+    public setButtonsListeners = () => {
+        this._allPetsButtonTotalLeft?.addEventListener('click', this._totalLeftScroll);
+        this._allPetsButtonLeft?.addEventListener('click', this._leftScroll);
+        this._allPetsButtonTotalRight?.addEventListener('click', this._totalRightScroll);
+        this._allPetsButtonRight?.addEventListener('click', this._rightScroll);
+        window.addEventListener('resize', this._resizeRender);
+    };
 }

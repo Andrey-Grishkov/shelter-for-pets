@@ -12,6 +12,7 @@ interface IPet {
 
 type RendererFunction = (item: IPet) => void;
 type handleCardClickFunction = () => void;
+type petsRenderFunction = (petsPageMass: IPet[]) => void;
 
 const pets: IPet[] = [
     {
@@ -332,8 +333,6 @@ function quantityCardsFunction() {
     return quantityCardsOnPage;
 }
 
-console.log(quantityCardsOnPage, 'after func');
-
 export {
     pets,
     popupBurgerElement,
@@ -369,4 +368,5 @@ export {
     templateCardsSelector,
     petsList,
     quantityCardsOnPage,
+    petsRenderFunction,
 };
