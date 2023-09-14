@@ -1,12 +1,14 @@
 {
-  "name": "shelter",
+  "name": "shelter-for-pets",
   "version": "1.0.0",
   "description": "",
   "main": "./scr/pages/index.ts",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Andrey-Grishkov",
   "license": "ISC",
@@ -24,6 +26,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^4.0.1",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",

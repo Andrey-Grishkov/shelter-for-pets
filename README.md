@@ -3,7 +3,7 @@ ___
 
 ### 🐶 Ссылка на проект:
 
-* [https://rolling-scopes-school.github.io/andrey-grishkov-JSFE2023Q1/shelter/pages/main/index.html](https://rolling-scopes-school.github.io/andrey-grishkov-JSFE2023Q1/shelter/pages/main/index.html)
+* [Деплой](https://yandex.ru)
 
 ___
 ### ✏️ Описание:
