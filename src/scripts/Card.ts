@@ -1,14 +1,14 @@
 import { IPet, handleCardClickFunction } from '../utils/constans';
 
 export class Card {
-    public _item: IPet;
-    public _name: string;
-    public _link: string;
-    public _type: string;
-    public _selector: string;
-    public _handleCardClick: handleCardClickFunction;
-    public _element: HTMLElement | null = null;
-    public _imageCard: HTMLImageElement | null = null;
+    protected _item: IPet;
+    protected _name: string;
+    protected _link: string;
+    protected _type: string;
+    protected _selector: string;
+    protected _handleCardClick: handleCardClickFunction;
+    protected _element: HTMLElement | null = null;
+    protected _imageCard: HTMLImageElement | null = null;
 
     constructor(
         item: IPet,
@@ -22,16 +22,16 @@ export class Card {
         this._handleCardClick = handleCardClick;
     }
 
-    _getItem() {
+    private _getItem = () => {
         const cardsTemplateElement: HTMLTemplateElement | null = document.querySelector(this._selector);
         if (!cardsTemplateElement) throw new Error('cardItem is null');
         const cardsTemplateElementContent = cardsTemplateElement.content;
         const cardItem: HTMLElement | null = cardsTemplateElementContent.querySelector('.card');
         if (!cardItem) throw new Error('cardItem is null');
         this._element = cardItem.cloneNode(true) as HTMLElement;
-    }
+    };
 
-    generateCard() {
+    public generateCard = () => {
         this._getItem();
         this._setEventListeners();
         if (!this._element) throw new Error('this._element is null');
@@ -44,11 +44,11 @@ export class Card {
         this._imageCard.src = this._link;
         this._imageCard.alt = this._type + ' ' + this._name;
         return this._element;
-    }
+    };
 
-    _setEventListeners() {
+    private _setEventListeners = () => {
         this._element?.addEventListener('click', () => {
             this._handleCardClick();
         });
-    }
+    };
 }

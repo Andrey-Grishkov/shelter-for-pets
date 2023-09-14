@@ -2,14 +2,14 @@ import { Popup } from './Popup';
 import { IPet } from '../utils/constans';
 
 export class PopupPets extends Popup {
-    _cardTitle: HTMLElement | null;
-    _cardSubTitle: HTMLElement | null;
-    _cardDescription: HTMLElement | null;
-    _ageText: HTMLElement | null;
-    _inoculationsText: HTMLElement | null;
-    _diseasesText: HTMLElement | null;
-    _parasitesText: HTMLElement | null;
-    _petsPopupImage: HTMLImageElement | null = null;
+    protected _cardTitle: HTMLElement | null;
+    protected _cardSubTitle: HTMLElement | null;
+    protected _cardDescription: HTMLElement | null;
+    protected _ageText: HTMLElement | null;
+    protected _inoculationsText: HTMLElement | null;
+    protected _diseasesText: HTMLElement | null;
+    protected _parasitesText: HTMLElement | null;
+    protected _petsPopupImage: HTMLImageElement | null = null;
 
     constructor(
         popupElement: HTMLElement | null,
@@ -37,10 +37,7 @@ export class PopupPets extends Popup {
         this._petsPopupImage = petsPopupImage;
     }
 
-    openPetsPopup(item: IPet): void {
-        console.log(item);
-        console.log(item.age);
-        console.log(this._ageText);
+    public openPetsPopup = (item: IPet) => {
         if (!this._cardTitle) throw new Error('this._cardTitle is null');
         this._cardTitle.innerText = item.name;
         if (!this._cardSubTitle) throw new Error('this._cardSubTitle is null');
@@ -59,5 +56,17 @@ export class PopupPets extends Popup {
         this._petsPopupImage.src = item.img;
         this._petsPopupImage.alt = item.type + ' ' + item.name;
         super.open();
-    }
+    };
+
+    protected _handlePetsPopupClick = (evt: MouseEvent): void => {
+        const target = evt.target as Element;
+        if (target.classList.contains('pets-popup__close-image')) {
+            this.close();
+        }
+    };
+
+    public setEventListeners = () => {
+        this._popup?.addEventListener('mousedown', this._handlePetsPopupClick);
+        super._setEventListeners();
+    };
 }

@@ -1,9 +1,9 @@
 export class Popup {
-    public _popup: HTMLElement | null;
-    public _openButton: HTMLElement | null;
-    public _popupOpenSelector: string;
-    public _popupClosedSelector: string;
-    public _pageElement: HTMLElement | null;
+    protected _popup: HTMLElement | null;
+    protected _openButton: HTMLElement | null;
+    protected _popupOpenSelector: string;
+    protected _popupClosedSelector: string;
+    protected _pageElement: HTMLElement | null;
 
     constructor(
         popupElement: HTMLElement | null,
@@ -19,35 +19,30 @@ export class Popup {
         this._pageElement = pageElement;
     }
 
-    open() {
+    public open() {
         this._pageElement?.classList.add('page_hidden');
         this._popup?.classList.add(this._popupOpenSelector);
     }
 
-    close() {
+    public close() {
         this._pageElement?.classList.remove('page_hidden');
         this._popup?.classList.remove(this._popupOpenSelector);
     }
 
-    setEventListeners(): void {
+    private _handlePopupClick = (evt: MouseEvent): void => {
+        const target = evt.target as Element;
+        if (
+            target.classList.contains(this._popupOpenSelector) ||
+            target.classList.contains(this._popupClosedSelector)
+        ) {
+            this.close();
+        }
+    };
+
+    protected _setEventListeners() {
         this._openButton?.addEventListener('mousedown', (): void => {
             this.open();
         });
-        this._popup?.addEventListener('mousedown', (evt): void => {
-            if (
-                (evt.target as Element)?.classList.contains(this._popupOpenSelector) ||
-                (evt.target as Element)?.classList.contains(this._popupClosedSelector)
-            ) {
-                this.close();
-            }
-            // if ((evt.target as Element)?.classList.contains('burger-popup__link')) {
-            //     evt.preventDefault();
-            //     const href: string | null = (evt.target as Element)?.getAttribute('href');
-            //     this.close();
-            //     if (href) {
-            //         window.location.replace(href);
-            //     }
-            // }
-        });
+        this._popup?.addEventListener('mousedown', this._handlePopupClick);
     }
 }

@@ -7,7 +7,8 @@ export class PetsPaginator {
     protected _allPetsButtonTotalRight: HTMLButtonElement | null;
     protected _allPetsButtonRight: HTMLButtonElement | null;
     protected _petsRender: petsRenderFunction;
-    protected count: number;
+    protected _petsList: HTMLElement | null;
+    public count: number;
     public quantityCardsOnPage: number;
     public pets: IPet[];
 
@@ -18,7 +19,8 @@ export class PetsPaginator {
         allPetsCount: HTMLElement | null,
         allPetsButtonTotalRight: HTMLButtonElement | null,
         allPetsButtonRight: HTMLButtonElement | null,
-        pets: IPet[]
+        pets: IPet[],
+        petsList: HTMLElement | null
     ) {
         this._allPetsButtonTotalLeft = allPetsButtonTotalLeft;
         this._allPetsButtonLeft = allPetsButtonLeft;
@@ -29,6 +31,7 @@ export class PetsPaginator {
         this.pets = pets;
         this.count = 1;
         this.quantityCardsOnPage = 6;
+        this._petsList = petsList;
     }
 
     private _totalLeftScroll = () => {

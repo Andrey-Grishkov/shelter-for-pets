@@ -1,25 +1,25 @@
 import { IPet, RendererFunction } from '../utils/constans';
 
 export class Section {
-    public _renderer: (item: IPet) => void;
-    public _selector: string;
-    public _section: HTMLElement | null;
-    public _items: IPet[] = [];
+    public renderer: (item: IPet) => void;
+    private _selector: string;
+    private _section: HTMLElement | null;
+    private _items: IPet[] = [];
 
     constructor({ renderer }: { renderer: RendererFunction }, selector: string) {
-        this._renderer = renderer;
+        this.renderer = renderer;
         this._selector = selector;
         this._section = document.querySelector(this._selector);
     }
 
-    renderCards(items: IPet[]) {
+    public renderCards = (items: IPet[]) => {
         this._items = items;
         this._items.forEach((item) => {
-            this._renderer(item);
+            this.renderer(item);
         });
-    }
+    };
 
-    addItem(item: Node) {
+    public addItem = (item: Node) => {
         this._section?.append(item);
-    }
+    };
 }

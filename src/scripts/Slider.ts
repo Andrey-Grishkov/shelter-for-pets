@@ -1,8 +1,11 @@
 export class Slider {
-    public _sliderList: HTMLElement | null;
-    public _sliderLeftButton: HTMLButtonElement | null;
-    public _sliderRightButton: HTMLButtonElement | null;
-    public offSet: number;
+    private _sliderList: HTMLElement | null;
+    private _sliderLeftButton: HTMLButtonElement | null;
+    private _sliderRightButton: HTMLButtonElement | null;
+    private _offSet: number;
+    private _gapValue: number;
+    private _cardSize: number;
+    private _animationTime: number;
 
     constructor(
         sliderList: HTMLElement | null,
@@ -12,13 +15,17 @@ export class Slider {
         this._sliderList = sliderList;
         this._sliderLeftButton = sliderLeftButton;
         this._sliderRightButton = sliderRightButton;
-        this.offSet = -360;
+        this._offSet = -360;
+        this._cardSize = 270;
+        this._animationTime = 400;
+        if (!this._sliderList) throw new Error('this._sliderList is null');
+        this._gapValue = parseFloat(window.getComputedStyle(this._sliderList).gap);
     }
 
-    infiniteSliderReplacer = (direction: string, gapValue: number) => {
+    private _infiniteSliderReplacer = (direction: string) => {
         if (!this._sliderList) throw new Error('this._sliderList is null');
         this._sliderList.classList.add('slider__cards-list_transition');
-        this._sliderList.style.left = this.offSet + 'px';
+        this._sliderList.style.left = this._offSet + 'px';
 
         const timerSlide = setTimeout(() => {
             if (!this._sliderList) throw new Error('this._sliderList is null');
@@ -33,40 +40,53 @@ export class Slider {
                 this._sliderList.classList.remove('slider__cards-list_transition');
                 this._sliderList.append(currentElement);
             }
-            this.offSet = -(270 + gapValue);
-            this._sliderList.style.left = this.offSet + 'px';
-            if (!this._sliderLeftButton) throw new Error('this._sliderLeftButton is null');
-            if (!this._sliderRightButton) throw new Error('this._sliderLeftButton is null');
-            this._sliderLeftButton.disabled = false;
-            this._sliderRightButton.disabled = false;
+            this._renderCards();
+            this._enableButtons();
             clearTimeout(timerSlide);
-        }, 400);
+        }, this._animationTime);
     };
 
-    leftScroll = () => {
-        console.log('Left');
+    private _enableButtons = () => {
         if (!this._sliderLeftButton) throw new Error('this._sliderLeftButton is null');
-        this._sliderLeftButton.disabled = true;
-        if (!this._sliderList) throw new Error('this._sliderList is null');
-        const gapValue = parseFloat(window.getComputedStyle(this._sliderList).gap);
-        this.offSet = this.offSet + 270 + gapValue;
-        this.infiniteSliderReplacer('left', gapValue);
-    };
-
-    rightScroll = () => {
-        console.log('right');
         if (!this._sliderRightButton) throw new Error('this._sliderLeftButton is null');
-        this._sliderRightButton.disabled = true;
-        if (!this._sliderList) throw new Error('this._sliderList is null');
-        const gapValue = parseFloat(window.getComputedStyle(this._sliderList).gap);
-        this.offSet = this.offSet - 270 - gapValue;
-        this.infiniteSliderReplacer('right', gapValue);
+        this._sliderLeftButton.disabled = false;
+        this._sliderRightButton.disabled = false;
     };
 
-    setButtonsListeners() {
-        if (this._sliderList) {
-            this._sliderLeftButton?.addEventListener('click', this.leftScroll);
-            this._sliderRightButton?.addEventListener('click', this.rightScroll);
-        }
-    }
+    private _disableButtons = () => {
+        if (!this._sliderLeftButton) throw new Error('this._sliderLeftButton is null');
+        if (!this._sliderRightButton) throw new Error('this._sliderLeftButton is null');
+        this._sliderLeftButton.disabled = true;
+        this._sliderRightButton.disabled = true;
+    };
+
+    private _leftScroll = () => {
+        this._disableButtons();
+        this._offSet = this._offSet + this._cardSize + this._gapValue;
+        this._infiniteSliderReplacer('left');
+    };
+
+    private _rightScroll = () => {
+        this._disableButtons();
+        this._offSet = this._offSet - this._cardSize - this._gapValue;
+        this._infiniteSliderReplacer('right');
+    };
+
+    private _renderCards = () => {
+        if (!this._sliderList) throw new Error('this._sliderList is null');
+        this._offSet = -(this._cardSize + this._gapValue);
+        this._sliderList.style.left = this._offSet + 'px';
+    };
+
+    private _resizeRender = () => {
+        if (!this._sliderList) throw new Error('this._sliderList is null');
+        this._gapValue = parseFloat(window.getComputedStyle(this._sliderList).gap);
+        this._renderCards();
+    };
+
+    public setButtonsListeners = () => {
+        this._sliderLeftButton?.addEventListener('click', this._leftScroll);
+        this._sliderRightButton?.addEventListener('click', this._rightScroll);
+        window.addEventListener('resize', this._resizeRender);
+    };
 }

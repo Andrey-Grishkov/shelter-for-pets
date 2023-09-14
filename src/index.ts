@@ -50,7 +50,7 @@ const popupBurger = new PopupBurger(
 );
 popupBurger.setEventListeners();
 
-function createCard(item: IPet) {
+const createCard = (item: IPet) => {
     const card = new Card(item, {
         selector: templateCardsSelector,
         handleCardClick: () => {
@@ -75,47 +75,52 @@ function createCard(item: IPet) {
     });
     const cardElement = card.generateCard();
     return cardElement;
+};
+
+if (sliderList) {
+    const sectionCards = new Section(
+        {
+            renderer: (item: IPet): void => {
+                sectionCards.addItem(createCard(item));
+            },
+        },
+        sliderListSelector
+    );
+
+    sectionCards.renderCards(pets);
+
+    const slider = new Slider(sliderList, sliderLeftButton, sliderRightButton);
+    slider.setButtonsListeners();
 }
 
-const sectionCards = new Section(
-    {
-        renderer: (item: IPet): void => {
-            sectionCards.addItem(createCard(item));
+if (petsList) {
+    const sectionCardsPets = new Section(
+        {
+            renderer: (item: IPet): void => {
+                sectionCardsPets.addItem(createCard(item));
+            },
         },
-    },
-    sliderListSelector
-);
+        allPetsListSelector
+    );
 
-sectionCards.renderCards(pets);
+    sectionCardsPets.renderCards(pets.slice(0, quantityCardsOnPage));
 
-const slider = new Slider(sliderList, sliderLeftButton, sliderRightButton);
-slider.setButtonsListeners();
-
-const sectionCardsPets = new Section(
-    {
-        renderer: (item: IPet): void => {
-            sectionCardsPets.addItem(createCard(item));
+    const paginator = new PetsPaginator(
+        {
+            petsRender: (petsPageMass: IPet[]): void => {
+                if (!petsList) throw new Error('petsList is null');
+                petsList.textContent = '';
+                sectionCardsPets.renderCards(petsPageMass);
+            },
         },
-    },
-    allPetsListSelector
-);
+        allPetsButtonTotalLeft,
+        allPetsButtonLeft,
+        allPetsCount,
+        allPetsButtonTotalRight,
+        allPetsButtonRight,
+        pets,
+        petsList
+    );
 
-sectionCardsPets.renderCards(pets.slice(0, quantityCardsOnPage));
-
-const paginator = new PetsPaginator(
-    {
-        petsRender: (petsPageMass: IPet[]): void => {
-            if (!petsList) throw new Error('petsList is null');
-            petsList.textContent = '';
-            sectionCardsPets.renderCards(petsPageMass);
-        },
-    },
-    allPetsButtonTotalLeft,
-    allPetsButtonLeft,
-    allPetsCount,
-    allPetsButtonTotalRight,
-    allPetsButtonRight,
-    pets
-);
-
-paginator.setButtonsListeners();
+    paginator.setButtonsListeners();
+}
