@@ -1,4 +1,4 @@
-import './pages/styles.scss';
+import './styles.scss';
 import {
     pets,
     popupBurgerElement,
@@ -32,13 +32,13 @@ import {
     templateCardsSelector,
     petsList,
     quantityCardsOnPage,
-} from './utils/constans';
-import { PopupBurger } from './scripts/PopupBurger';
-import { PopupPets } from './scripts/PopupPets';
-import { Section } from './scripts/Section';
-import { Card } from './scripts/Card';
-import { Slider } from './scripts/Slider';
-import { PetsPaginator } from './scripts/PetsPaginator';
+} from '../utils/constans';
+import { PopupBurger } from '../scripts/PopupBurger';
+import { PopupPets } from '../scripts/PopupPets';
+import { Section } from '../scripts/Section';
+import { Card } from '../scripts/Card';
+import { Slider } from '../scripts/Slider';
+import { PetsPaginator } from '../scripts/PetsPaginator';
 
 const popupBurger = new PopupBurger(
     popupBurgerElement,

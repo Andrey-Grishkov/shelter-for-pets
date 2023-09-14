@@ -6,7 +6,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/index' },
+  entry: { main: './src/pages/index.ts' },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -47,11 +47,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.html'
+      template: './src/pages/index.html'
     }),
     new HtmlWebpackPlugin({
       filename: 'pets.html',
-      template: './src/pets.html'
+      template: './src/pages/pets.html'
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({

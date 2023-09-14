@@ -2,36 +2,16 @@
 @import '../vendor/fonts.css';
 @import '../styles/variables';
 
-@import '../styles/header/header.scss';
-@import '../styles/start-screen/start-screen.scss';
-@import '../styles/about/about.scss';
-@import '../styles/pets/pets.scss';
-@import '../styles/slider/slider.scss';
-@import '../styles/card/card.scss';
-@import '../styles/help/help.scss';
-@import '../styles/donation/donation.scss';
-@import '../styles/footer/footer.scss';
-@import '../styles/burger-popup/burger-popup.scss';
-@import '../styles/pets-popup/pets-popup.scss';
-@import '../styles/all-pets/all-pets.scss';
-
-.page {
-  //max-width: 100%;
-  margin: 0 auto;
-  font-family: 'Georgia', 'Arial', google fonts, sans-serif;
-  color: rgba(84, 84, 84, 1);
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  &_hidden {
-    height: 100vh;
-    overflow-y: hidden;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
+@import '../styles/page/page';
+@import '../styles/header/header';
+@import '../styles/start-screen/start-screen';
+@import '../styles/about/about';
+@import '../styles/pets/pets';
+@import '../styles/slider/slider';
+@import '../styles/card/card';
+@import '../styles/help/help';
+@import '../styles/donation/donation';
+@import '../styles/footer/footer';
+@import '../styles/burger-popup/burger-popup';
+@import '../styles/pets-popup/pets-popup';
+@import '../styles/all-pets/all-pets';

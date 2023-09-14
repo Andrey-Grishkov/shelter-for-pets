@@ -1,14 +1,14 @@
 {
-  "name": "rs-css",
+  "name": "shelter",
   "version": "1.0.0",
   "description": "",
-  "main": "./scr/index.ts",
+  "main": "./scr/pages/index.ts",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
     "lint": "eslint . --ext .ts"
   },
-  "author": "",
+  "author": "Andrey-Grishkov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.5",
