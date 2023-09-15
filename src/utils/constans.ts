@@ -16,8 +16,8 @@ type petsRenderFunction = (petsPageMass: IPet[]) => void;
 
 const pets: IPet[] = [
     {
-        name: '1Jennifer',
-        img: '../../images/card__image%20pets-jennifer.png',
+        name: 'Jennifer',
+        img: './images/card__image%20pets-jennifer.png',
         type: 'Dog',
         breed: 'Labrador',
         description:
@@ -28,8 +28,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '2Sophia',
-        img: '../images/card__image%20sophia.png',
+        name: 'Sophia',
+        img: './images/card__image%20sophia.png',
         type: 'Dog',
         breed: 'Shih tzu',
         description:
@@ -40,8 +40,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '3Woody',
-        img: '../images/card__image%20pets-woody.png',
+        name: 'Woody',
+        img: './images/card__image%20pets-woody.png',
         type: 'Dog',
         breed: 'Golden Retriever',
         description:
@@ -52,8 +52,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '4Scarlett',
-        img: '../../images/card__image%20pets-scarlet.png',
+        name: 'Scarlett',
+        img: './images/card__image%20pets-scarlet.png',
         type: 'Dog',
         breed: 'Jack Russell Terrier',
         description:
@@ -64,8 +64,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '5Katrine',
-        img: '../../images/card__image%20pets-katrine.png',
+        name: 'Katrine',
+        img: './images/card__image%20pets-katrine.png',
         type: 'Cat',
         breed: 'British Shorthair',
         description:
@@ -76,8 +76,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '6Timmy',
-        img: '../../images/card__image%20pets-timmy.png',
+        name: 'Timmy',
+        img: './images/card__image%20pets-timmy.png',
         type: 'Cat',
         breed: 'British Shorthair',
         description:
@@ -88,8 +88,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '7Freddie',
-        img: '../../images/card__image%20freddie.png',
+        name: 'Freddie',
+        img: './images/card__image%20freddie.png',
         type: 'Cat',
         breed: 'British Shorthair',
         description:
@@ -100,8 +100,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '8Charly',
-        img: '../../images/card__image%20pets-charly.png',
+        name: 'Charly',
+        img: './images/card__image%20pets-charly.png',
         type: 'Dog',
         breed: 'Jack Russell Terrier',
         description:
@@ -112,8 +112,8 @@ const pets: IPet[] = [
         parasites: ['lice', ' fleas'],
     },
     {
-        name: '9Chubby',
-        img: '../../images/card__image%20chubby.png',
+        name: 'Chubby',
+        img: './images/card__image%20chubby.png',
         type: 'Cat',
         breed: 'breedless',
         description: 'Chubby is 1 years old black and white female cat with green eyes.',
@@ -123,8 +123,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '10Bobby',
-        img: '../../images/card__image%20pets-bobby.png',
+        name: 'Bobby',
+        img: './images/card__image%20pets-bobby.png',
         type: 'Dog',
         breed: 'Shar Pei',
         description: 'Bobby is cute little puppy with grey color.',
@@ -134,8 +134,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '11Luna',
-        img: '../../images/card__image%20pets-luna.png',
+        name: 'Luna',
+        img: './images/card__image%20pets-luna.png',
         type: 'Dog',
         breed: 'Mini American Shepherd',
         description: 'Luna is female puppy with blue eyes',
@@ -145,8 +145,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '12Cosmos',
-        img: '../../images/card__image%20cosmos.png',
+        name: 'Cosmos',
+        img: './images/card__image%20cosmos.png',
         type: 'Cat',
         breed: 'Silver tabby chinchilla Persian',
         description: 'Cosmos is big male cat with green eyes and have calm character.',
@@ -156,8 +156,8 @@ const pets: IPet[] = [
         parasites: ['worms'],
     },
     {
-        name: '13Inca',
-        img: '../../images/card__image%20inca.png',
+        name: 'Inca',
+        img: './images/card__image%20inca.png',
         type: 'Dog',
         breed: 'Belgian Shepherd',
         description: 'Inca is big female black dog',
@@ -167,8 +167,8 @@ const pets: IPet[] = [
         parasites: ['fleas'],
     },
     {
-        name: '14Holly',
-        img: '../../images/card__image%20holly.png',
+        name: 'Holly',
+        img: './images/card__image%20holly.png',
         type: 'Cat',
         breed: 'Egyptian Mau',
         description: 'Holly is female cat with green eyes and silver hair.',
@@ -178,8 +178,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '15Mary',
-        img: '../../images/card__image%20mary.png',
+        name: 'Mary',
+        img: './images/card__image%20mary.png',
         type: 'Dog',
         breed: 'Rough Collie',
         description: 'Mary is a old female dog with golden hair',
@@ -189,8 +189,8 @@ const pets: IPet[] = [
         parasites: ['worms'],
     },
     {
-        name: '16Cookie',
-        img: '../../images/card__image%20cookie.png',
+        name: 'Cookie',
+        img: './images/card__image%20cookie.png',
         type: 'Cat',
         breed: 'breedless',
         description: 'Cookie is chocolate tortoiseshell and white female cat with green eyes.',
@@ -200,8 +200,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '17Mysia',
-        img: '../../images/card__image%20mysia.png',
+        name: 'Mysia',
+        img: './images/card__image%20mysia.png',
         type: 'Cat',
         breed: 'Russian Blue',
         description: 'Mysia is cute female cat with green eyes.',
@@ -211,8 +211,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '18Marco',
-        img: '../../images/card__image%20marco.png',
+        name: 'Marco',
+        img: './images/card__image%20marco.png',
         type: 'Dog',
         breed: 'Blue Italian Greyhound',
         description: 'Marco is a young dog with brown hair',
@@ -222,8 +222,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '19Marcel',
-        img: '../../images/card__image%20marcel.png',
+        name: 'Marcel',
+        img: './images/card__image%20marcel.png',
         type: 'Cat',
         breed: 'Blue British Shorthair',
         description:
@@ -234,8 +234,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '20Paul',
-        img: '../../images/card__image%20pets-paul.png',
+        name: 'Paul',
+        img: './images/card__image%20pets-paul.png',
         type: 'Dog',
         breed: 'German Shepherd',
         description: 'Paul is blue and tan cute puppy.',
@@ -245,8 +245,8 @@ const pets: IPet[] = [
         parasites: ['none'],
     },
     {
-        name: '21Eskey',
-        img: '../../images/card__image%20pets-eskey.png',
+        name: 'Eskey',
+        img: './images/card__image%20pets-eskey.png',
         type: 'Dog',
         breed: 'Belgian Shepherd',
         description: 'Eskey is playful female dog.',
@@ -256,8 +256,8 @@ const pets: IPet[] = [
         parasites: ['fleas'],
     },
     {
-        name: '22Chloe',
-        img: '../../images/card__image%20chloe.png',
+        name: 'Chloe',
+        img: './images/card__image%20chloe.png',
         type: 'Cat',
         breed: 'Persian',
         description: 'Chloe is female chocolate kitty with yellow eyes.',
@@ -268,8 +268,8 @@ const pets: IPet[] = [
     },
 
     {
-        name: '23Warren',
-        img: '../../images/card__image%20pets-warren.png',
+        name: 'Warren',
+        img: './images/card__image%20pets-warren.png',
         type: 'Dog',
         breed: 'Jack Russell Terrier',
         description: 'Warren is young dog with a cute bang.',
@@ -280,8 +280,8 @@ const pets: IPet[] = [
     },
 
     {
-        name: '24Tom',
-        img: '../../images/card__image%20tom.png',
+        name: 'Tom',
+        img: './images/card__image%20tom.png',
         type: 'Cat',
         breed: 'breedless',
         description: 'Tom is red cat with stripes.',
