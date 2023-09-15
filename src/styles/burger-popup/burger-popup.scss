@@ -36,10 +36,15 @@
     align-self: flex-end;
     object-fit: cover;
     transition: 1s ease-in;
+    background: url("../images/header__burger-menu.svg") 0 0/contain no-repeat;
 
     &_rotate {
-      transition: 1s ease-in;
       transform: rotate(90deg);
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: .3;
     }
   }
 
