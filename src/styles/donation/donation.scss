@@ -1,36 +1,32 @@
 .donation {
   width: 100%;
   height: 462px;
-  background: #F6F6F6;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  background: $dark-white;
+  @include flex(row, center, center);
   gap: 30px;
 
-  @media screen and (max-width: 940px) {
-    flex-direction: column-reverse;
+  @media screen and (max-width: $big-tablet) {
+    @include flex(column-reverse, center, center);
     height: 783px;
   }
 
-  @media screen and (max-width: 768px) {
-    justify-content: flex-end;
+  @media screen and (max-width: $middle-tablet) {
+    @include flex(column-reverse, flex-end, center);
     gap: 40px;
   }
 
-  @media screen and (max-width: 420px) {
-    flex-direction: column-reverse;
+  @media screen and (max-width: $small-tablet) {
     height: 543px;
   }
 
   &__image {
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       width: 65.76vw;
       object-fit: contain;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       width: 260px;
       height: 135px;
     }
@@ -40,24 +36,22 @@
     margin-bottom: 20px;
     width: 380px;
     height: 282px;
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
     gap: 20px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       margin-top: 80px;
-      justify-content: flex-start;
       gap: 20px;
       height: 300px;
       margin-bottom: 0;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       width: 300px;
-      align-items: center;
+      @include flex(column, flex-start, center);
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       margin-top: 30px;
     }
   }
@@ -65,46 +59,31 @@
   &__title {
     margin: 0;
     width: 300px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #545454;
+    @extend %sectionTitle;
+    color: $grey;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       margin-top: 10px;
       font-size: 25px;
       text-align: center;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       width: 220px;
     }
   }
 
   &__subtitle {
     margin: 0;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 110%;
-    letter-spacing: 0.06em;
-    color: #545454;
+    @extend %subtitleText;
+    color: $grey;
 
-    @media screen and (max-width: 420px) {
-      font-size: 15px;
-      line-height: 160%;
+    @media screen and (max-width: $small-tablet) {
       text-align: center;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       width: 320px;
-      font-size: 15px;
-      line-height: 160%;
-      letter-spacing: 0;
     }
   }
 
@@ -114,19 +93,12 @@
     height: 43px;
     background: #F1CDB3;
     border-radius: 9px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @include flex(row, center, center);
     gap: 15px;
     text-decoration: none;
+    @extend %hover;
 
-    &:hover {
-      opacity: .8;
-      transition: 1s ease-in;
-    }
-
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       width: 281px;
       min-height: 43px;
     }
@@ -138,33 +110,18 @@
 
   &__credit-number {
     margin: 0;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: #545454;
-
-    @media screen and (max-width: 420px) {
-      font-size: 15px;
-      line-height: 110%;
-    }
+    @extend %buttonText;
+    color: $grey;
   }
 
   &__description {
     margin: 0;
     width: 380px;
-    font-family: 'Arial';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    color: #B2B2B2;
+    @extend %descriptionText;
+    @include flex(column, flex-start, center);
+    color: $light-grey;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       width: 280px;
       text-align: center;
     }

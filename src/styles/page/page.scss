@@ -1,8 +1,7 @@
 .page {
-  //max-width: 100%;
   margin: 0 auto;
-  font-family: 'Georgia', 'Arial', google fonts, sans-serif;
-  color: rgba(84, 84, 84, 1);
+  font-family: $fontFamily;
+  color: $grey;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;

@@ -1,6 +1,5 @@
 .burger-popup {
-  align-items: center;
-  justify-content: flex-start;
+  @include flex(column, flex-start, center);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,12 +19,10 @@
     margin: 0 0 0 auto;
     width: 320px;
     height: 100%;
-    background-color: rgba(41, 41, 41, 1);
-    color: #000000;
+    background-color: $light-black;
+    color: $black;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    @include flex(column, flex-start, center);
   }
 
   &__burger-menu {
@@ -35,31 +32,22 @@
     margin-right: 20px;
     align-self: flex-end;
     object-fit: cover;
-    transition: 1s ease-in;
     background: url("../images/header__burger-menu.svg") 0 0/contain no-repeat;
+    @extend %hover;
 
     &_rotate {
       transform: rotate(90deg);
     }
-
-    &:hover {
-      cursor: pointer;
-      opacity: .3;
-    }
   }
 
   &__navigation {
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
   }
 
   &__list {
     margin: 158px 0 0 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex(column, flex-start, center);
     list-style-type: none;
   }
 
@@ -69,32 +57,25 @@
 
   &__link {
     margin: 0;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 160%;
-    color: #CDCDCD;
+    @extend %linkText;
+    color: $grey-persian;
     text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: transparent 3px solid;
+    @extend %hover;
 
     &_active {
-      margin: 0;
-      font-family: 'Arial';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 160%;
-      text-decoration: none;
-      color: #FAFAFA;
-      border-bottom: #F1CDB3 3px solid;
-      padding-bottom: 4px;
+      color: $white-light;
+      border-bottom: $persian 3px solid;
+      &:hover {
+        cursor: default;
+        opacity: 1;
+      }
     }
 
     &:hover {
-      color: #FAFAFA;
-      border-bottom: #F1CDB3 3px solid;
-      cursor: pointer;
-      padding-bottom: 4px;
+      color: $white-light;
+      border-bottom: $persian 3px solid;
     }
   }
 }

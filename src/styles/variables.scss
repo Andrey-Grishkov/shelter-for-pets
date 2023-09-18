@@ -1,12 +1,152 @@
+// breakpoints
+$desktop: 1280px;
+$small-desktop: 1220px;
+$little-desktop: 1180px;
+$low-desktop: 1040px;
+$big-tablet: 900px;
+$middle-tablet: 768px;
+$some-middle-tablet: 740px;
+$more-then-tablet: 610px;
+$tablet: 500px;
+$small-tablet: 420px;
+$mobile-bigger: 380px;
+$mobile: 320px;
 
+// colors
+$black: #000000;
+$dark: #1A1A1C;
+$black-grey: #262425;
+$light-black: #292929;
+$white: #FFFFFF;
+$dark-white: #F6F6F6;
+$white-light: #FAFAFA;
+$white-grey: #D9D9D9FF;
+$grey: #545454;
+$dark-grey: #4C4C4C;
+$light-grey: #B2B2B2;
+$grey-persian: #CDCDCD;
+$persian: #F1CDB3;
+$light-persian: #FDDCC4;
+$brown: #513D2F;
+$light-brown: #5B483A;
+
+%zeroSpaces {
+  margin: 0;
+  padding: 0;
+}
+
+//flex
+@mixin flex($flex-direction: column, $justify-content: flex-start, $align-items: flex-start) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+//animation buttons
+%hover {
+  transition: .8s ease-in;
+  &:hover {
+    cursor: pointer;
+    opacity: .3;
+  }
+}
+
+//Typographic
+$fontFamily: 'Georgia', 'Arial', google fonts, sans-serif;
+
+@mixin text($font-size, $line-height, $font-weight: 400){
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+%mainTitle {
+  @include text(44px, 130%);
+}
+
+%sectionTitle {
+  @include text(35px, 130%);
+  letter-spacing: 0.06em;
+  @media screen and (max-width: $tablet) {
+    @include text(30px, 130%);
+  }
+  @media screen and (max-width: $mobile-bigger) {
+    @include text(25px, 130%);
+  }
+}
+
+%paragraphText {
+  @include text(15px, 160%);
+  font-family: 'Arial';
+}
+
+%subtitleText {
+  @include text(15px, 110%);
+  letter-spacing: 0.06em;
+  @media screen and (max-width: $small-tablet) {
+    @include text(15px, 160%);
+  }
+  @media screen and (max-width: $mobile) {
+    letter-spacing: 0;
+  }
+}
+
+%buttonText {
+  @include text(20px, 115%);
+  letter-spacing: 0.06em;
+  @media screen and (max-width: $small-tablet) {
+    font-size: 15px;
+    line-height: 110%;
+  }
+}
+
+%cardButtonText {
+  @media screen and (max-width: $mobile) {
+    @include text(17px, 130%);
+    letter-spacing: 0.06em;
+  }
+}
+
+%linkText {
+  @include text(32px, 160%);
+  font-family: 'Arial';
+  letter-spacing: 0.06em;
+}
+
+%descriptionText {
+  @include text(12px, 18px);
+  font-family: 'Arial';
+}
+
+%headerTitle {
+  @include text(32px, 110%);
+  letter-spacing: 0.06em;
+}
+
+%headerSubtitle {
+  @include text(13px, 15px);
+  letter-spacing: 0.1em;
+}
+
+//Slider
+$card-gap-desktop: 7.03vw;
+$card-gap-little-desktop: 2.03vw;
+$card-gap-low-desktop: 7.03vw;
+$card-gap-big-tablet: 4.44vw;
+$card-gap-middle-tablet: 5.21vw;
+$card-gap-some-middle-tablet: 2.21vw;
+$cardWidth: 270px;
+
+//Paginator
 :root {
   --quantityCardsOnPage: 6;
 
-  @media screen and (max-width: 880px) {
+  @media screen and (max-width: $big-tablet) {
     --quantityCardsOnPage: 4;
   }
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: $more-then-tablet) {
     --quantityCardsOnPage: 1;
   }
 }

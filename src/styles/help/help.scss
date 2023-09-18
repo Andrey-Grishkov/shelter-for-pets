@@ -1,51 +1,38 @@
 .help {
   width: 100%;
   height: 611px;
-  background: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  background: $white;
+  @include flex(column, flex-start, center);
 
-  @media screen and (max-width: 1277px) {
-    height: 779px;
-  }
-
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $middle-tablet) {
     height: 960px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $small-tablet) {
     height: 780px;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: $mobile) {
     height: 745px;
   }
 
   &__title {
     margin: 80px 0 0 0;
     width: 350px;
-    font-family: 'Georgia';
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #545454;
+    @extend %sectionTitle;
+    color: $grey;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       margin-top: 85px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       margin-top: 42px;
       font-size: 25px;
       width: 220px;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       width: 250px;
     }
   }
@@ -54,24 +41,20 @@
     margin: 60px 0 0 0;
     padding: 0;
     list-style-type: none;
-    width: 80.47vw;
+    width: 1030px;
+    column-gap: 120px;
+    row-gap: 55px;
     height: 281px;
-    //border: blue 1px solid;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    column-gap: 9.38vw;
-    row-gap: 4.30vw;
+    @include flex(row, center, flex-start);
+
     flex-wrap: wrap;
 
-    @media screen and (min-width: 1281px) {
-      width: 1030px;
-      column-gap: 120px;
-      row-gap: 55px;
+    @media screen and (max-width: $desktop) {
+      width: 80.47vw;
+      column-gap: 6.38vw;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       margin-top: 55px;
       width: 82.03vw;
       height: 449px;
@@ -79,44 +62,30 @@
       row-gap: 55px;
     }
 
-    @media screen and (max-width: 767px) {
-      margin-top: 42px;
-      width: 390px;
-      height: 655px;
-      row-gap: 30px;
-      column-gap: 30px;
-      justify-content: flex-start;
-    }
-
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: $tablet) {
       column-gap: 3.91vw;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       margin-top: 42px;
       width: 290px;
       height: 555px;
       column-gap: 30px;
-      justify-content: flex-start;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       margin-top: 40px;
     }
   }
 
   &__list-item {
-    //border: darkcyan 1px solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column, center, center);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       width: 170px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       width: 130px;
     }
   }
@@ -125,7 +94,7 @@
     width: 60px;
     height: 60px;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: $tablet) {
       width: 50px;
       height: 50px;
     }
@@ -133,19 +102,14 @@
 
   &__text {
     margin: 30px 0 0 0;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: #545454;
+    @extend %buttonText;
+    color: $grey;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $small-tablet) {
       font-size: 15px;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       margin-top: 20px;
     }
   }

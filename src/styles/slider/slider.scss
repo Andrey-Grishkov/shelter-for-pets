@@ -1,37 +1,22 @@
-$cardGap1280: 7.03vw;
-$cardGap1180: 2.03vw;
-$cardGap1040: 7.03vw;
-$cardGap900: 4.44vw;
-$cardGap768: 5.21vw;
-$cardGap760: 2.21vw;
-$cardWidth: 270px;
-
 .slider {
   margin-top: 60px;
-  width: 93.75vw;
+  width: 1200px;
   height: 435px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
 
-  @media screen and (min-width: 1281px) {
-    width: 1200px;
+  @media screen and (max-width: $desktop) {
+    width: 93.75vw;
   }
 
-  @media screen and (max-width: 1040px) {
+  @media screen and (max-width: $big-tablet) {
     width: 83.75vw;
   }
 
-  @media screen and (max-width: 900px) {
-    width: 708px;
-  }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $middle-tablet) {
     width: 92.19vw;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: $some-middle-tablet) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
@@ -39,10 +24,9 @@ $cardWidth: 270px;
     justify-content: center;
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: $more-then-tablet) {
     margin-top: 0;
-    justify-content: center;
-    align-items: center;
+    @include flex(row, center, center);
     flex-wrap: wrap;
     width: 300px;
     column-gap: 80px;
@@ -54,59 +38,59 @@ $cardWidth: 270px;
     width: 52px;
     height: 52px;
     background: none;
-    border: 2px solid rgba(241, 205, 179, 1);
+    border: 2px solid $persian;
     border-radius: 100px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 
     &:hover {
-      background: #FDDCC4;
+      background: $light-persian;
     }
 
     &_left {
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: $some-middle-tablet) {
         order: 2;
         justify-self: end;
       }
     }
 
     &_right {
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: $some-middle-tablet) {
         order: 3;
       }
     }
   }
 
   &__container {
-    width: calc(#{$cardGap1280}*2 + #{$cardWidth}*3);
+    width: 990px;
     overflow: hidden;
 
-    @media screen and (min-width: 1281px) {
-      width: 990px;
+    @media screen and (max-width: $desktop) {
+      width: calc(#{$card-gap-desktop}*2 + #{$cardWidth}*3);
     }
 
-    @media screen and (max-width: 1180px) {
-      width: calc(#{$cardGap1180}*2 + #{$cardWidth}*3);
+    @media screen and (max-width: $little-desktop) {
+      width: calc(#{$card-gap-little-desktop}*2 + #{$cardWidth}*3);
     }
 
-    @media screen and (max-width: 1040px) {
-      width: calc(#{$cardGap1040} + #{$cardWidth}*2);
+    @media screen and (max-width: $low-desktop) {
+      width: calc(#{$card-gap-low-desktop} + #{$cardWidth}*2);
     }
 
-    @media screen and (max-width: 900px) {
-      width: calc(#{$cardGap900} + #{$cardWidth}*2);
+    @media screen and (max-width: $big-tablet) {
+      width: calc(#{$card-gap-big-tablet} + #{$cardWidth}*2);
     }
 
-    @media screen and (max-width: 768px) {
-      width: calc(#{$cardGap768} + #{$cardWidth}*2);
+    @media screen and (max-width: $middle-tablet) {
+      width: calc(#{$card-gap-middle-tablet} + #{$cardWidth}*2);
     }
 
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: $some-middle-tablet) {
       width: $cardWidth;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: $some-middle-tablet) {
       grid-column: span 2;
       justify-self: center;
     }
@@ -115,49 +99,44 @@ $cardWidth: 270px;
   &__cards-list {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex(row, flex-start, center);
     list-style-type: none;
-    gap: $cardGap1280;
     position: relative;
-    left: calc(#{-$cardWidth} - #{$cardGap1280});
+    left: -360px;
+    gap: 90px;
 
     &_transition {
       transition: all .5s ease;
     }
 
-    @media screen and (min-width: 1281px) {
-      left: -360px;
-      gap: 90px;
+    @media screen and (max-width: $desktop) {
+      gap: $card-gap-desktop;
+      left: calc(#{-$cardWidth} - #{$card-gap-desktop});
     }
 
-    @media screen and (max-width: 1180px) {
-      gap: $cardGap1180;
-      left: calc(#{-$cardWidth} - #{$cardGap1180});
+    @media screen and (max-width: $little-desktop) {
+      gap: $card-gap-little-desktop;
+      left: calc(#{-$cardWidth} - #{$card-gap-little-desktop});
     }
 
-    @media screen and (max-width: 1040px) {
-      gap: $cardGap1040;
-      left: calc(#{-$cardWidth} - #{$cardGap1040});
+    @media screen and (max-width: $low-desktop) {
+      gap: $card-gap-low-desktop;
+      left: calc(#{-$cardWidth} - #{$card-gap-low-desktop});
     }
 
-    @media screen and (max-width: 900px) {
-      left: calc(#{-$cardWidth} - #{$cardGap900});
-      gap: $cardGap900;
+    @media screen and (max-width: $big-tablet) {
+      left: calc(#{-$cardWidth} - #{$card-gap-big-tablet});
+      gap: $card-gap-big-tablet;
     }
 
-    @media screen and (max-width: 768px) {
-      gap: $cardGap768;
-      left: calc(#{-$cardWidth} - #{$cardGap768});
+    @media screen and (max-width: $middle-tablet) {
+      gap: $card-gap-middle-tablet;
+      left: calc(#{-$cardWidth} - #{$card-gap-middle-tablet});
     }
 
-    @media screen and (max-width: 760px) {
-      gap: $cardGap760;
-      left: calc(#{-$cardWidth} - #{$cardGap760});
+    @media screen and (max-width: $some-middle-tablet) {
+      gap: $card-gap-some-middle-tablet;
+      left: calc(#{-$cardWidth} - #{$card-gap-some-middle-tablet});
     }
   }
 }
-
-

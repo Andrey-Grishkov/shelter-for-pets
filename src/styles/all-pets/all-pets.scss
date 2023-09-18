@@ -1,42 +1,31 @@
 .all-pets {
   width: 100%;
   height: 1342px;
-  background-color: #F6F6F6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  background-color: $dark-white;
+  @include flex(column, flex-start, center);
   scroll-behavior: smooth;
 
-  @media screen and (max-width: 885px) {
+  @media screen and (max-width: $big-tablet) {
     height: 1733px;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: $mobile) {
     height: 1649px;
   }
 
   &__title {
     margin: 80px 0 0 0;
     width: 400px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.06em;
-    color: #545454;
+    @extend %sectionTitle;
+    @include flex(column, center, center);
+    color: $grey;
 
-    @media screen and (max-width: 430px) {
-      font-size: 25px;
+    @media screen and (max-width: $small-tablet) {
       margin-top: 42px;
       width: 300px;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       width: 290px;
     }
   }
@@ -45,43 +34,33 @@
     margin: 60px 0 0 0;
     padding: 0;
     list-style-type: none;
-    width: 93.75vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    width: 1100px;
+    @include flex(row, center);
     flex-wrap: wrap;
-    gap: 3.13%;
+    column-gap: 40px;
     row-gap: 30px;
 
-    @media screen and (min-width: 1281px) {
-      width: 1200px;
-      gap: 40px;
+    @media screen and (max-width: $desktop) {
+      width: 83.75vw;
+      column-gap: 3.13%;
     }
 
-    @media screen and (max-width: 1279px) {
+    @media screen and (max-width: $big-tablet) {
       gap: 1.13vw;
     }
 
-    @media screen and (max-width: 1270px) {
-      gap: 3.13vw;
-    }
-
-    @media screen and (max-width: 930px) {
-      gap: 1.13vw;
-    }
-
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       margin-top: 28px;
       gap: 5.8vw;
       width: 92.19vw;
       row-gap: 30px;
     }
 
-    @media screen and (max-width: 610px) {
+    @media screen and (max-width: $more-then-tablet) {
       gap: 5.13vw;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $mobile) {
       row-gap: 30px;
       margin-top: 42px;
       width: 300px;
@@ -92,15 +71,14 @@
     margin-top: 60px;
     width: 340px;
     height: 52px;
-    display: flex;
-    flex-direction: row;
+    @include flex(row);
     gap: 20px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       margin-top: 40px;
     }
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $small-tablet) {
       width: 300px;
       gap: 10px;
     }
@@ -110,24 +88,19 @@
     width: 52px;
     height: 52px;
     background: none;
-    border: 2px solid #F1CDB3;
+    border: 2px solid $persian;
     border-radius: 100px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: #292929;
+    @extend %buttonText;
+    color: $light-black;
 
     &:hover {
-      background: #F1CDB3;
+      background: $persian;
       cursor: pointer;
     }
 
     &_disabled {
-      color: #CDCDCD;
-      border: 2px solid #CDCDCD;
+      color: $grey-persian;
+      border: 2px solid $grey-persian;
 
       &:hover {
         background: none;
@@ -136,10 +109,8 @@
     }
 
     &_count {
-      background: #F1CDB3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: $persian;
+      @include flex(column, center, center);
 
       &:hover {
         cursor: default;
