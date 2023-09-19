@@ -57,7 +57,7 @@
     width: 302px;
     height: 234px;
     @include flex(column);
-    gap: 30px;
+    gap: 35px;
 
     @media screen and (max-width: $big-tablet) {
       margin-top: 30px;
@@ -109,7 +109,8 @@
     gap: 30px;
 
     &_phone {
-      gap: 45px;
+      margin-top: 10px;
+      gap: 40px;
 
       @media screen and (max-width: $middle-tablet) {
         gap: 40px;
@@ -129,14 +130,14 @@
     }
   }
 
-  &__item {
+  &__link {
     @include flex(row);
     gap: 20px;
     text-decoration: none;
     @extend %hover;
   }
 
-  &__link {
+  &__text {
     margin: 0;
     @include flex(column, flex-start, center);
     @extend %buttonText;

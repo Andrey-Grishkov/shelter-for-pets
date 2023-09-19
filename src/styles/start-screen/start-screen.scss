@@ -106,7 +106,7 @@
     width: 207px;
     height: 52px;
     background-color: $persian;
-    @extend %cardButtonText;
+    @extend %startButtonText;
     color: $light-black;
     border-radius: 100px;
     @extend %hover;

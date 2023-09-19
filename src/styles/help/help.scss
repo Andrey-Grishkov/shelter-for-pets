@@ -20,7 +20,9 @@
     margin: 80px 0 0 0;
     width: 350px;
     @extend %sectionTitle;
+    letter-spacing: 2.1px;
     color: $grey;
+    text-align: center;
 
     @media screen and (max-width: $middle-tablet) {
       margin-top: 85px;
@@ -42,11 +44,9 @@
     padding: 0;
     list-style-type: none;
     width: 1030px;
-    column-gap: 120px;
     row-gap: 55px;
     height: 281px;
-    @include flex(row, center, flex-start);
-
+    @include flex(row, space-between, flex-start);
     flex-wrap: wrap;
 
     @media screen and (max-width: $desktop) {
@@ -79,6 +79,17 @@
   }
 
   &__list-item {
+
+    &:nth-child(6) {
+      margin-left: 85px;
+      background: red;
+    }
+
+    &:nth-child(9) {
+      margin-right: 85px;
+      background: red;
+    }
+
     @include flex(column, center, center);
 
     @media screen and (max-width: $middle-tablet) {

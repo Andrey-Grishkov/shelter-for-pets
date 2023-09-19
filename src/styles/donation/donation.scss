@@ -20,6 +20,7 @@
   }
 
   &__image {
+    margin-top: -20px;
 
     @media screen and (max-width: $middle-tablet) {
       width: 65.76vw;

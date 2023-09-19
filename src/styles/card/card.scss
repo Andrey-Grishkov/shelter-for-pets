@@ -20,7 +20,7 @@
   &__image {
     width: 270px;
     height: 270px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   &__button {
@@ -31,7 +31,7 @@
     border-radius: 100px;
     background: none;
     cursor: pointer;
-    @extend %cardButtonText;
+    @extend %startButtonText;
 
     &:hover {
       background: $light-persian;

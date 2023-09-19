@@ -12,17 +12,84 @@
     @include flex(column, center, center);
   }
 
+  &__content {
+    width: 900px;
+    min-height: 500px;
+    height: auto;
+    background-color: $white-light;
+    color: $black;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+
+    @media screen and (max-width: $desktop) {
+      width: 70.31vw;
+    }
+
+    @media screen and (max-width: $middle-tablet) {
+      width: 82.03vw;
+      min-height: 350px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 62.03vw;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 240px;
+      min-height: 341px;
+    }
+  }
+
+  &__content-container {
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    border-radius: 10px;
+    @include flex(row, flex-start, flex-start);
+    overflow: hidden;
+
+    @media screen and (max-width: $middle-tablet) {
+      gap: 12px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding-left: 20px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 0;
+      @include flex(row, center, flex-start);
+    }
+  }
+
   &__close {
     width: 52px;
     height: 52px;
     position: absolute;
     border: 2px $persian solid;
-    border-radius: 100%;
     background: none;
-    left: 1080px;
-    top: 136px;
+    border-radius: 100%;
+    left: 900 - 10px;
+    top: -52px;
     @include flex(column, center, center);
     cursor: pointer;
+
+    @media screen and (max-width: $desktop) {
+      left: calc(#{70.31vw} - #{10px});
+    }
+
+    @media screen and (max-width: $middle-tablet) {
+      left: calc(#{82.03vw} - #{10px});
+    }
+
+    @media screen and (max-width: $tablet) {
+      left: calc(#{62.03vw} - #{10px});
+    }
+
+    @media screen and (max-width: $mobile) {
+      left: 218px;
+    }
   }
 
   &__close-image {
@@ -31,62 +98,139 @@
     object-fit: contain;
   }
 
-  &__content {
-    width: 900px;
-    height: 500px;
-    background-color: $white-light;
-    color: $black;
-    box-sizing: border-box;
-    @include flex(row, flex-start, center);
-    border-radius: 10px;
-    gap: 30px;
-  }
-
   &__image {
     width: 500px;
-    height: 500px;
+    min-height: 100%;
+    object-fit: cover;
+    @media screen and (max-width: $desktop) {
+      width: 39.06vw;
+    }
+
+    @media screen and (max-width: $big-tablet) {
+      width: 35.57vw;
+    }
+
+    @media screen and (max-width: $middle-tablet) {
+      width: 45.57vw;
+    }
+
+    @media screen and (max-width: $more-then-tablet) {
+      width: 38vw;
+    }
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
   }
 
   &__text-container {
+    margin-top: 50px;
     width: 351px;
-    height: 362px;
+    min-height: 362px;
     @include flex();
+
+    @media screen and (max-width: $desktop) {
+      width: 27.42vw;
+    }
+
+    @media screen and (max-width: $middle-tablet) {
+      width: 34vw;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: $more-then-tablet) {
+      width: 37vw;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 55vw;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 220px;
+    }
   }
 
   &__title {
     margin: 0;
     @extend %sectionTitle;
+    @media screen and (max-width: $middle-tablet) {
+      letter-spacing: 2.1px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin: 0 auto;
+      @include text(35px, 130%);
+    }
   }
 
   &__subtitle {
     margin: 10px 0 0 0;
     @extend %buttonText;
+
+    @media screen and (max-width: $mobile) {
+      margin: 10px auto 0 auto;
+      @include text(20px, 115%);
+      letter-spacing: 1.2px;
+    }
   }
 
   &__description {
-    margin: 40px 0 0 0;
+    margin: 45px 0 0 0;
     @extend %subtitleText;
+
+    @media screen and (max-width: $middle-tablet) {
+      @include text(13px, 110%);
+      letter-spacing: 0.78px;
+      margin-top: 20px;
+    }
   }
 
   &__list {
-    margin: 40px 0 0 0;
+    margin: 45px 0 0 0;
     padding-left: 15px;
-    list-style-type: circle;
-    color: $persian;
+
+    @media screen and (max-width: $middle-tablet) {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 22px;
+    }
   }
 
   &__list-item {
     margin: 0 0 10px 0;
-    @include flex(row);
     @extend %subtitleText;
+    list-style-type: disc;
+    color: $persian;
+
+    @media screen and (max-width: $middle-tablet) {
+      margin-bottom: 6px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      @include text(15px, 110%);
+      letter-spacing: 0.9px;
+    }
   }
 
   &__list-text {
+    display: inline;
     margin: 0 0 0 5px;
     color: $black;
+
+    @media screen and (max-width: $middle-tablet) {
+      margin: 0;
+    }
   }
 
   &__list-span {
+    display: inline;
     margin: 0;
     color: $black;
     font-weight: 700;
