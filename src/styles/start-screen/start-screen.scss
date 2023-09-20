@@ -20,12 +20,12 @@
 
   &__content {
     margin: 0 3.13vw 0 3.13vw;
-    max-width: 1280px;
+    width: 1280px;
     padding: 0;
     position: relative;
 
-    @media screen and (min-width: $desktop) {
-      width: 100vw;
+    @media screen and (max-width: $desktop) {
+      max-width: 100vw;
     }
 
     @media screen and (max-width: $little-desktop) {

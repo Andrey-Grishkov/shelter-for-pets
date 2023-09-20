@@ -15,6 +15,10 @@
     margin: 30px 0 0 0;
     @extend %buttonText;
     color: $grey;
+
+    @media screen and (max-width: $mobile) {
+      @include text(20px, 115%);
+    }
   }
 
   &__image {

@@ -7,20 +7,59 @@
   z-index: 2;
 
   @media screen and (max-width: $mobile) {
-    width: 280px;
+    width: 290px;
+    padding-top: 32px;
+    margin-left: -10px;
+    @include flex(row, flex-start);
+    gap: 58px;
   }
 
   &_pets {
     padding-top: 10px;
-    @include flex(row, space-between);
+
+    @media screen and (max-width: $some-middle-tablet) {
+      padding-left: 15px;
+      width: 90vw;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 85vw;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 2px;
+      padding-left: 15px;
+    }
   }
 
   &__title-container {
     @include flex(column, center, center);
     width: 186px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $middle-tablet) {
       width: 25.96vw;
+    }
+
+    @media screen and (max-width: $some-middle-tablet) {
+      @include flex(column, flex-start, flex-start);
+      width: 35.96vw;
+    }
+
+    @media screen and (max-width: $more-then-tablet) {
+      width: 40.96vw;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 50.96vw;
+    }
+
+    @media screen and (max-width: $mobile-bigger) {
+      width: 70.96vw;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-left: 6px;
+      width: 194px;
     }
   }
 
@@ -37,6 +76,10 @@
       @media screen and (max-width: $middle-tablet) {
         margin-bottom: 10px;
       }
+
+      @media screen and (max-width: $mobile) {
+        margin-left: -5px;
+      }
     }
   }
 
@@ -45,12 +88,20 @@
     @extend %headerSubtitle;
     color: $white-grey;
 
+    @media screen and (max-width: $mobile) {
+      margin-left: 7px;
+    }
+
     &_darked {
       color: $light-black;
       margin: 10px 0 0 0;
 
       @media screen and (max-width: $middle-tablet) {
         margin: 0;
+      }
+
+      @media screen and (max-width: $mobile) {
+        margin-left: -5px;
       }
     }
   }
@@ -61,6 +112,7 @@
 
     @media screen and (max-width: $middle-tablet) {
       width: 57.68vw;
+      margin-right: 5px;
     }
 
     @media screen and (max-width: $some-middle-tablet) {
@@ -79,11 +131,16 @@
     background: url("../images/header__burger-menu.svg") 0 0/contain no-repeat;
     @extend %hover;
 
+    @media screen and (max-width: $mobile) {
+      margin-left: 5px;
+      margin-top: 18px;
+    }
+
     &_darked {
       background: url("../images/header__burger-menu_darked.svg") 0 0/contain no-repeat;
     }
 
-    @media screen and (max-width: 740px) {
+    @media screen and (max-width: $some-middle-tablet) {
       display: block;
     }
   }
@@ -156,11 +213,22 @@
 .header-container {
   margin: 0 auto 0 auto;
   width: 1200px;
-
   height: 120px;
   @include flex(column, center, flex-start);
 
   @media screen and (max-width: $desktop) {
     width: 93.75vw;
+  }
+
+  @media screen and (max-width: $more-then-tablet) {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: $middle-tablet) {
+    height: 125px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: 120px;
   }
 }

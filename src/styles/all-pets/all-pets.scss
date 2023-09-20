@@ -5,7 +5,7 @@
   @include flex(column, flex-start, center);
   scroll-behavior: smooth;
 
-  @media screen and (max-width: $big-tablet) {
+  @media screen and (max-width: $low-desktop) {
     height: 1733px;
   }
 
@@ -27,8 +27,18 @@
       width: 300px;
     }
 
+    @media screen and (max-width: $middle-tablet) {
+      margin-top: 80px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      @include text(25px, 130%);
+      letter-spacing: 1.5px;
+      width: 300px;
+    }
+
     @media screen and (max-width: $mobile) {
-      width: 290px;
+      margin-top: 42px;
     }
   }
 
@@ -47,8 +57,8 @@
       column-gap: 3.13%;
     }
 
-    @media screen and (max-width: $big-tablet) {
-      gap: 1.13vw;
+    @media screen and (max-width: $low-desktop) {
+      column-gap: 8.13%;
     }
 
     @media screen and (max-width: $middle-tablet) {
@@ -56,6 +66,10 @@
       gap: 5.8vw;
       width: 92.19vw;
       row-gap: 30px;
+    }
+
+    @media screen and (max-width: $some-middle-tablet) {
+      width: 22.19vw;
     }
 
     @media screen and (max-width: $more-then-tablet) {

@@ -5,6 +5,7 @@
   #211F20;
   @include flex(row, center, center);
   gap: 160px;
+  overflow: hidden;
 
   @media screen and (max-width: $desktop) {
     gap: 12.50vw;
@@ -14,12 +15,16 @@
     gap: 5.50vw;
   }
 
-  @media screen and (max-width: $big-tablet) {
+  @media screen and (max-width: $low-desktop) {
     @include flex(row, center, flex-start);
     height: 639px;
     flex-wrap: wrap;
-    column-gap: 60px;
+    column-gap: 90px;
     row-gap: 65px;
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    column-gap: 60px;
   }
 
   @media screen and (max-width: $more-then-tablet) {
@@ -39,7 +44,7 @@
     @include flex(column);
     gap: 30px;
 
-    @media screen and (max-width: $big-tablet) {
+    @media screen and (max-width: $low-desktop) {
       margin-top: 30px;
     }
 
@@ -59,7 +64,7 @@
     @include flex(column);
     gap: 35px;
 
-    @media screen and (max-width: $big-tablet) {
+    @media screen and (max-width: $low-desktop) {
       margin-top: 30px;
     }
 
@@ -99,6 +104,13 @@
       font-size: 25px;
       text-align: center;
     }
+
+    &_type_locations {
+      @media screen and (max-width: $mobile) {
+        margin-left: 10px;
+      }
+    }
+
   }
 
   &__list {
@@ -108,25 +120,31 @@
     @include flex(column);
     gap: 30px;
 
+    @media screen and (max-width: $middle-tablet) {
+      margin-top: 8px;
+      gap: 28px;
+    }
+
+    @media screen and (max-width: $more-then-tablet) {
+      gap: 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      gap: 40px;
+    }
+
     &_phone {
       margin-top: 10px;
       gap: 40px;
 
       @media screen and (max-width: $middle-tablet) {
+        margin-top: 0;
         gap: 40px;
       }
 
       @media screen and (max-width: $mobile) {
         margin-left: 15px;
       }
-    }
-
-    @media screen and (max-width: $middle-tablet) {
-      gap: 35px;
-    }
-
-    @media screen and (max-width: $more-then-tablet) {
-      gap: 40px;
     }
   }
 
@@ -135,6 +153,9 @@
     gap: 20px;
     text-decoration: none;
     @extend %hover;
+    @media screen and (max-width: $mobile) {
+      @include flex(row, flex-start, center);
+    }
   }
 
   &__text {
@@ -143,5 +164,17 @@
     @extend %buttonText;
     color: $persian;
     text-decoration: none;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 5px;
+      @include text(20px, 115%);
+      letter-spacing: 1.2px;
+    }
+
+    &_type_locations {
+      @media screen and (max-width: $mobile) {
+        margin-top: -10px;
+      }
+    }
   }
 }

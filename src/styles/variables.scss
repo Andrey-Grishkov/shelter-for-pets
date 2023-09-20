@@ -1,5 +1,6 @@
 // breakpoints
 $desktop: 1280px;
+$small-then-desktop: 1278px;
 $small-desktop: 1220px;
 $little-desktop: 1180px;
 $low-desktop: 1040px;
@@ -128,11 +129,20 @@ $fontFamily: 'Georgia', 'Arial', google fonts, sans-serif;
 %headerTitle {
   @include text(32px, 110%);
   letter-spacing: 0.06em;
+
+  @media screen and (max-width: $mobile) {
+    @include text(32px, 110%);
+    letter-spacing: 1.92px;
+  }
 }
 
 %headerSubtitle {
   @include text(13px, 15px);
   letter-spacing: 0.1em;
+
+  @media screen and (max-width: $mobile) {
+    letter-spacing: 1.3px;
+  }
 }
 
 //Slider
@@ -148,12 +158,12 @@ $cardWidth: 270px;
 :root {
   --quantityCardsOnPage: 8;
 
-  @media screen and (max-width: $big-tablet) {
-    --quantityCardsOnPage: 4;
+  @media screen and (max-width: $small-then-desktop) {
+    --quantityCardsOnPage: 6;
   }
 
-  @media screen and (max-width: $more-then-tablet) {
-    --quantityCardsOnPage: 1;
+  @media screen and (max-width: $some-middle-tablet) {
+    --quantityCardsOnPage: 3;
   }
 }
 
