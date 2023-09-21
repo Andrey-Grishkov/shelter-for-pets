@@ -14,6 +14,10 @@
     height: 900px;
   }
 
+  @media screen and (max-width: $more-then-tablet) {
+    height: 870px;
+  }
+
   @media screen and (max-width: $mobile) {
     height: 823px;
   }
@@ -112,14 +116,16 @@
     @extend %hover;
 
     @media screen and (max-width: $little-desktop) {
-      margin: 42px 32.55vw 0 32.55vw;
+      margin: 42px 16.15vw 0 16.15vw;
+    }
+
+    @media screen and (max-width: $middle-tablet) {
+      margin-left: 258px;
     }
 
     @media screen and (max-width: $some-middle-tablet) {
       margin: 42px auto 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(column, center, center);
     }
 
     @media screen and (max-width: $mobile) {
@@ -151,6 +157,11 @@
     }
 
     @media screen and (max-width: $some-middle-tablet) {
+      width: 260px*2;
+      height: 271px*2;
+    }
+
+    @media screen and (max-width: $more-then-tablet) {
       width: 260px*1.4;
       height: 271px*1.4;
     }

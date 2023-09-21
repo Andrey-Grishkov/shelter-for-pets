@@ -8,8 +8,12 @@
     width: 93.75vw;
   }
 
+  @media screen and (max-width: $low-desktop) {
+    width: 83vw;
+  }
+
   @media screen and (max-width: $big-tablet) {
-    width: 83.75vw;
+    width: 93.75vw;
   }
 
   @media screen and (max-width: $middle-tablet) {
@@ -49,6 +53,10 @@
     }
 
     &_left {
+      //@media screen and (max-width: $big-tablet) {
+      //  margin-right: 15px;
+      //}
+
       @media screen and (max-width: $some-middle-tablet) {
         order: 2;
         justify-self: end;
@@ -56,6 +64,11 @@
     }
 
     &_right {
+
+      //@media screen and (max-width: $big-tablet) {
+      //  margin-left: 15px;
+      //}
+
       @media screen and (max-width: $some-middle-tablet) {
         order: 3;
       }

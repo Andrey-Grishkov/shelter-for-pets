@@ -64,6 +64,7 @@
     }
 
     @media screen and (max-width: $mobile) {
+      @include flex(column, flex-start, center);
       margin-top: 40px;
       width: 270px;
       height: 494px;
@@ -95,6 +96,7 @@
     }
 
     @media screen and (max-width: $mobile) {
+      margin-top: 5px;
       width: 250px;
     }
   }
@@ -109,7 +111,7 @@
     }
 
     @media screen and (max-width: $mobile) {
-      margin-top: 20px;
+      margin-top: 22px;
       text-align: justify
     }
   }

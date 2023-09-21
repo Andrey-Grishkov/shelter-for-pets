@@ -3,6 +3,7 @@
   height: 462px;
   background: $dark-white;
   @include flex(row, center, center);
+  overflow: hidden;
   gap: 30px;
 
   @media screen and (max-width: $big-tablet) {
@@ -23,6 +24,7 @@
     margin-top: -20px;
 
     @media screen and (max-width: $middle-tablet) {
+      margin-top: 0;
       width: 65.76vw;
       object-fit: contain;
     }
@@ -70,6 +72,7 @@
     }
 
     @media screen and (max-width: $mobile) {
+      margin-top: 15px;
       width: 220px;
     }
   }
@@ -125,6 +128,10 @@
     @media screen and (max-width: $small-tablet) {
       width: 280px;
       text-align: center;
+    }
+
+    @media screen and (max-width: $mobile) {
+      text-align: justify;
     }
   }
 }
