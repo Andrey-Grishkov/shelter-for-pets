@@ -2,8 +2,8 @@ import './styles.scss';
 import {
     pets,
     popupBurgerElement,
+    burgerMenuElements,
     burgerMenuElement,
-    burgerMenuNavElement,
     petsPopupElement,
     pageElement,
     popupBurgerOpenedSelector,
@@ -32,6 +32,7 @@ import {
     templateCardsSelector,
     petsList,
     quantityCardsOnPage,
+    toggleButtonActiveSelector,
 } from '../utils/constans';
 import { PopupBurger } from '../scripts/PopupBurger';
 import { PopupPets } from '../scripts/PopupPets';
@@ -42,11 +43,13 @@ import { PetsPaginator } from '../scripts/PetsPaginator';
 
 const popupBurger = new PopupBurger(
     popupBurgerElement,
+    burgerMenuElements,
+    burgerMenuElement,
     burgerMenuElement,
     popupBurgerOpenedSelector,
     popupBurgerClosedSelector,
     pageElement,
-    burgerMenuNavElement
+    toggleButtonActiveSelector
 );
 popupBurger.setEventListeners();
 

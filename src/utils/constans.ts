@@ -293,10 +293,12 @@ const pets: IPet[] = [
 ];
 
 const popupBurgerElement: HTMLElement | null = document.querySelector('.burger-popup');
+const burgerMenuElements: NodeListOf<HTMLElement> = document.querySelectorAll('.header__burger-menu-element');
 const burgerMenuElement: HTMLElement | null = document.querySelector('.header__burger-menu');
 const burgerMenuNavElement: HTMLElement | null = document.querySelector('.burger-popup__burger-menu');
 const popupBurgerOpenedSelector = 'burger-popup_opened';
 const popupBurgerClosedSelector = 'burger-popup__burger-menu';
+const toggleButtonActiveSelector = 'header__burger-menu_active';
 const pageElement: HTMLElement | null = document.querySelector('.page');
 const petsPopupElement: HTMLElement | null = document.querySelector('.pets-popup');
 const popupPetsOpenedSelector = 'pets-popup_opened';
@@ -336,6 +338,7 @@ function quantityCardsFunction() {
 export {
     pets,
     popupBurgerElement,
+    burgerMenuElements,
     burgerMenuElement,
     burgerMenuNavElement,
     petsPopupElement,
@@ -369,4 +372,5 @@ export {
     petsList,
     quantityCardsOnPage,
     petsRenderFunction,
+    toggleButtonActiveSelector,
 };

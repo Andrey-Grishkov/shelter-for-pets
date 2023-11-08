@@ -1,29 +1,31 @@
 import { Popup } from './Popup';
 
 export class PopupBurger extends Popup {
-    protected _burgerMenuNavElement: HTMLElement | null;
+    protected _burgerMenuElement: HTMLElement | null;
+    protected _burgerMenuElements: NodeListOf<HTMLElement>;
 
     constructor(
         popupElement: HTMLElement | null,
+        burgerMenuElements: NodeListOf<HTMLElement>,
+        burgerMenuElement: HTMLElement | null,
         openButton: HTMLElement | null,
         popupOpenSelector: string,
         popupClosedSelector: string,
         pageElement: HTMLElement | null,
-        burgerMenuNavElement: HTMLElement | null
+        toggleButtonActiveSelector: string
     ) {
-        super(popupElement, openButton, popupOpenSelector, popupClosedSelector, pageElement);
-        this._burgerMenuNavElement = burgerMenuNavElement;
+        super(
+            popupElement,
+            openButton,
+            popupOpenSelector,
+            popupClosedSelector,
+            pageElement,
+            openButton,
+            toggleButtonActiveSelector
+        );
+        this._burgerMenuElement = burgerMenuElement;
+        this._burgerMenuElements = burgerMenuElements;
     }
-
-    public open = () => {
-        this._burgerMenuNavElement?.classList.add('burger-popup__burger-menu_rotate');
-        super.open();
-    };
-
-    public close = () => {
-        this._burgerMenuNavElement?.classList.remove('burger-popup__burger-menu_rotate');
-        super.close();
-    };
 
     protected _handleBurgerPopupClick = (evt: MouseEvent): void => {
         const target = evt.target as Element;
@@ -32,7 +34,7 @@ export class PopupBurger extends Popup {
             evt.preventDefault();
             const href = target.getAttribute('href');
             if (href) {
-                this.close();
+                this.toggle();
                 window.location.replace(href);
             }
         }

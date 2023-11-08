@@ -4,7 +4,6 @@
   height: 60px;
   @include flex(row, space-between);
   position: relative;
-  z-index: 2;
 
   @media screen and (max-width: $mobile) {
     width: 290px;
@@ -125,10 +124,29 @@
   }
 
   &__burger-menu {
+    @include flex(column);
+    gap: 5px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    border: none;
+    z-index: 500;
     display: none;
-    width: 32px;
-    height: 22px;
-    background: url("../images/header__burger-menu.svg") 0 0/contain no-repeat;
+    transition-delay: .2s;
+
+    &_active {
+      @include flex(column);
+      gap: 5px;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      top: 20px;
+      border: none;
+      z-index: 500;
+      transform: rotate(-90deg);
+    }
+
     @extend %hover;
 
     @media screen and (max-width: $mobile) {
@@ -136,13 +154,32 @@
       margin-top: 18px;
     }
 
-    &_darked {
-      background: url("../images/header__burger-menu_darked.svg") 0 0/contain no-repeat;
-    }
-
     @media screen and (max-width: $some-middle-tablet) {
       display: block;
     }
+  }
+
+  &__burger-menu-element {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: $persian;
+
+    &:nth-child(2) {
+      transform: translateY(10px);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(20px);
+    }
+  }
+
+  &__burger-menu_darked > &__burger-menu-element {
+    background-color: $light-black;
+  }
+
+  &__burger-menu_active > &__burger-menu-element {
+    background-color: $persian;
   }
 
   &__list {
@@ -186,10 +223,6 @@
 
     &_darked {
       color: $grey;
-
-      &:last-child {
-        //margin-right: 100px;
-      }
 
       &_active {
         margin: 0;

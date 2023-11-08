@@ -1,17 +1,15 @@
 .burger-popup {
-  @include flex(column, flex-start, center);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 3;
-  transition: 1s ease-in;
-  display: none;
+  right: -320px;
+  z-index: -1;
+  transition: background-color .8s ease-in, right .8s ease-in, z-index .8s ease-in;
 
   &_opened {
-    transition: 1s ease-in;
-    display: block;
+    right: 0;
+    z-index: 400;
     background-color: rgba(0, 0, 0, .6);
   }
 
@@ -22,22 +20,8 @@
     background-color: $light-black;
     color: $black;
     box-sizing: border-box;
-    @include flex(column, flex-start, center);
-  }
-
-  &__burger-menu {
-    width: 30px;
-    height: 30px;
-    margin-top: 45px;
-    margin-right: 20px;
-    align-self: flex-end;
-    object-fit: cover;
-    background: url("../images/header__burger-menu.svg") 0 0/contain no-repeat;
-    @extend %hover;
-
-    &_rotate {
-      transform: rotate(90deg);
-    }
+    @include flex(column, center, center);
+    gap: 200px;
   }
 
   &__navigation {
@@ -45,7 +29,6 @@
   }
 
   &__list {
-    margin: 158px 0 0 0;
     padding: 0;
     @include flex(column, flex-start, center);
     list-style-type: none;

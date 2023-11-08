@@ -53,6 +53,7 @@
     color: $light-black;
     transition: 1s ease-in;
     text-decoration: none;
+    @include flex(row, center, center);
 
     &:hover {
       cursor: pointer;

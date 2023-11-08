@@ -10,15 +10,17 @@
   <main class="page">
     <section class="start-screen">
       <div class="start-screen__content">
-
-
         <header class="header">
           <div class="header__title-container">
             <a class="header__title" href="#">Cozy House</a>
             <p class="header__subtitle">Shelter for pets in Boston</p>
           </div>
           <nav class="header__navigation">
-            <div class="header__burger-menu"></div>
+            <div class="header__burger-menu">
+              <span class="header__burger-menu-element"></span>
+              <span class="header__burger-menu-element"></span>
+              <span class="header__burger-menu-element"></span>
+            </div>
             <ul class="header__list">
               <li><a class="header__list-item header__list-item_active" href="#">About the shelter</a></li>
               <li><a class="header__list-item" href="pets.html">Our pets</a></li>
@@ -27,16 +29,13 @@
             </ul>
           </nav>
         </header>
-
-
         <h1 class="start-screen__title">Not only people need a house</h1>
         <p class="start-screen__description">We offer to give a chance to a little and nice puppy with an extremely wide
           and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-        <button class="start-screen__button">Make a friend</button>
+        <a class="start-screen__button" href="pets.html">Make a friend</a>
         <div class="start-screen__image"></div>
       </div>
     </section>
-
     <section class="about">
       <img class="about__image" src="./images/about__image.png" alt="pets">
       <div class="about__text-container">
@@ -50,8 +49,6 @@
           they become attached to the pets and would hardly ever leave them alone.</p>
       </div>
     </section>
-
-
     <section class="pets">
       <h2 class="pets__title">Our friends who <br> are looking for a house</h2>
       <div class="slider">
@@ -62,9 +59,8 @@
         </div>
         <button class="slider__button slider__button_right" type="button">→</button>
       </div>
-      <button class="pets__button">Get to know the rest</button>
+      <a class="pets__button" href="pets.html">Get to know the rest</a>
     </section>
-
     <section class="help" id="help">
       <h2 class="help__title">How you can help our shelter</h2>
       <ul class="help__icons-list">
@@ -106,7 +102,6 @@
         </li>
       </ul>
     </section>
-
     <section class="donation">
       <img class="donation__image" src="./images/donation__image.png" alt="dog">
       <div class="donation__content">
@@ -121,7 +116,6 @@
           Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
       </div>
     </section>
-
     <footer class="footer" id="contacts">
       <nav class="footer__contacts">
         <h2 class="footer__title">For questions and suggestions</h2>
@@ -159,12 +153,9 @@
       </nav>
       <img class="footer__image" src="./images/footer__image.png" alt="puppy">
     </footer>
-
-
     <div class="burger-popup">
       <div class="burger-popup__content">
         <nav class="burger-popup__navigation">
-          <div class="burger-popup__burger-menu"></div>
           <ul class="burger-popup__list">
             <li class="burger-popup__list-item"><a class="burger-popup__link burger-popup__link_active" href="#">About the shelter</a></li>
             <li class="burger-popup__list-item"><a class="burger-popup__link" href="pets.html">Our pets</a></li>
@@ -174,8 +165,6 @@
         </nav>
       </div>
     </div>
-
-
     <div class="pets-popup">
       <div class="pets-popup__content">
         <button class="pets-popup__close">
@@ -209,10 +198,7 @@
         </div>
       </div>
     </div>
-
-
   </main>
-
   <template class="template-cards">
     <li class="card">
       <img class="card__image">
@@ -220,6 +206,5 @@
       <button class="card__button">Learn more</button>
     </li>
   </template>
-
 </body>
 </html>

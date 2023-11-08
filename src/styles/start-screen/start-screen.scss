@@ -114,6 +114,7 @@
     color: $light-black;
     border-radius: 100px;
     @extend %hover;
+    text-decoration: none;
 
     @media screen and (max-width: $little-desktop) {
       margin: 42px 16.15vw 0 16.15vw;

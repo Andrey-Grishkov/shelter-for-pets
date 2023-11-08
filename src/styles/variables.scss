@@ -107,18 +107,9 @@ $fontFamily: 'Georgia', 'Arial', google fonts, sans-serif;
   letter-spacing: 1.02px;
 }
 
-//удалить
-//%cardButtonText {
-//  @media screen and (max-width: $mobile) {
-//    @include text(17px, 130%);
-//    letter-spacing: 0.06em;
-//  }
-//}
-
 %linkText {
   @include text(32px, 160%);
   font-family: 'Arial';
-  letter-spacing: 0.06em;
 }
 
 %descriptionText {
