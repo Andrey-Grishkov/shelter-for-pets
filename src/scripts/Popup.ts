@@ -34,14 +34,6 @@ export class Popup {
         if (this._toggleButtonActiveSelector) this._openButton?.classList.toggle(this._toggleButtonActiveSelector);
         this._pageElement?.classList.toggle('page_hidden');
         this._popup?.classList.toggle(this._popupOpenSelector);
-        if (!this._popup) throw new Error('this._popup dont find');
-        // if (this._popup.classList.contains(this._popupOpenSelector)) {
-        //     this._popup.style.right = '-320px';
-        //     //this._popup.style.opacity = '0';
-        //     console.log('sodergit');
-        // } else {
-        //     this._popup.classList.toggle(this._popupOpenSelector);
-        // }
     }
 
     public close() {

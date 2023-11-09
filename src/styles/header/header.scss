@@ -176,6 +176,7 @@
 
   &__burger-menu_darked > &__burger-menu-element {
     background-color: $light-black;
+    transition: background-color .8s ease-in;
   }
 
   &__burger-menu_active > &__burger-menu-element {
